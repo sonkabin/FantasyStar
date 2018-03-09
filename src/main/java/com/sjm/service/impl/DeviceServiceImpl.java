@@ -174,16 +174,27 @@ public class DeviceServiceImpl implements DeviceService {
 
 	/**
 	 * 通过Task选择条件获取Device
+	 * select * from device_detail where (device_name,logic_id) in (("摄像头",1),("电梯",1))
 	 */
 	@Override
 	public List<DeviceDetail> getDevicesWithCondition(Task task) {
 		// TODO Auto-generated method stub
+		List<Map<String, Object>> device = new ArrayList<>();
 		String str = task.getDevice();
 		//获得所有设备
 		String[] devices = str.split(",");
-		
-		DeviceDetailExample example = new DeviceDetailExample();
-		List<DeviceDetail> list = deviceDetailMapper.selectByExample(example);
+		for (String string : devices) {
+			Map<String, Object> map = new HashMap<>();
+			if(string.trim().length() == 0) {
+				continue;
+			}
+			String[] info = string.split(":");
+			map.put("deviceName", info[0]);
+			map.put("logicId", info[1]);
+			device.add(map);
+		}
+		System.out.println(device);
+		List<DeviceDetail> list = deviceDetailMapper.selectByNameLogicId(device);
 		return list;
 	}
 	

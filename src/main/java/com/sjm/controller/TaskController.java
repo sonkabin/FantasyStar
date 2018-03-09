@@ -27,6 +27,9 @@ public class TaskController {
 	@Autowired
 	private DeviceService deviceService;
 	
+	/**
+	 * 首页保存发布任务
+	 */
 	@RequestMapping(value="/saveTask",method=RequestMethod.POST)
 	public Message saveTask(Task task) {
 		taskService.saveTask(task);

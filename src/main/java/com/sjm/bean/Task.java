@@ -2,6 +2,8 @@ package com.sjm.bean;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Task {
     private Integer id;
 
@@ -13,8 +15,10 @@ public class Task {
 
     private String ouName;
 
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date startTime;
 
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date endTime;
 
     private Integer buildNo;

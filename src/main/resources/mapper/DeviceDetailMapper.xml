@@ -251,6 +251,18 @@
       <include refid="Example_Where_Clause" />
     </if>
   </select>
+  <!-- selectByNameLogicId -->
+  <select id="selectByNameLogicId" parameterType="java.util.ArrayList" resultMap="BaseResultMap">
+  	select 
+  	<include refid="Base_Column_List" />
+  	from device_detail
+  	<where>
+  		(device_name,logic_id) in
+  		<foreach collection="list" item="item" open="(" close=")" separator=",">
+  			(#{item[deviceName]},#{item[logicId]})
+  		</foreach>
+  	</where>
+  </select>
   <update id="updateByExampleSelective" parameterType="map">
     update device_detail
     <set>

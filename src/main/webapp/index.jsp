@@ -237,7 +237,19 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="add-oper-type" class="col-sm-2 control-label">操作类型</label>
+							<label for="add-ouser" class="col-sm-2 control-label">楼号</label>
+							<div class="col-sm-10">
+								<input class="form-control" type="text" id="add-buildNo" name="buildNo" readonly>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="add-ouser" class="col-sm-2 control-label">设备</label>
+							<div class="col-sm-10">
+								<input class="form-control" type="text" id="add-device" name="device" readonly>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="add-ouser" class="col-sm-2 control-label">操作类型</label>
 							<div class="col-sm-10">
 								<input class="form-control" type="text" id="add-operation-type" name="operationType" readonly>
 							</div>
@@ -1315,12 +1327,59 @@
 		$(".check-item").prop("checked",$(this).prop("checked"));
 	});
 	
-	//check_item
+	//check-item
 	$(document).on("click",".check-item",function(){
-		//判断当前选择中的元素是否5个
+		//判断当前选择中的元素是否是5个
 		var flag = $(".check-item:checked").length==$(".check-item").length;
 		$("#check-all").prop("checked",flag);
 	});
+
+	$('#add-btn').click(function() {
+		if($(".check-item:checked").length == 0){
+			alert('请至少选择一个')
+			return;
+		}
+		
+		//判断是否选的都是同一个操作类型
+		var types = "";
+		var count = 0;
+		$.each($(".check-item:checked"),function(){
+			types += $(this).parents("tr").find("td:eq(4)").text();
+		});
+		if(types.indexOf("维护") != -1){
+			count++;
+		}
+		if(types.indexOf("检查") != -1){
+			count++;
+		}
+		if(types.indexOf("保养") != -1){
+			count++;
+		}
+		if(count > 1){
+			$("#check-all").prop("checked",false);
+			$(".check-item").prop("checked",false);
+			alert('请选择相同的操作类型');
+			return;
+		}
+		
+		var type;
+		var buildNo;
+		var device="";
+		$.each($(".check-item:checked"),function(){
+			type = $(this).parents("tr").find("td:eq(4)").text();
+			buildNo = $(this).parents("tr").find("td:eq(1)").text();
+			device += $(this).parents("tr").find("td:eq(2)").text();
+			device += $(this).parents("tr").find("td:eq(3)").text()+",";
+		});
+		
+		$('#add-buildNo').val(buildNo);
+		$('#add-operation-type').val(type);
+		$('#add-device').val(device);
+		
+		$('#add-modal').modal({
+			backdrop : 'static'
+		})
+	})
 	
 
 	//保存任务
@@ -1337,12 +1396,6 @@
 		//关闭新增模态框
 		$('#add-modal').modal('hide');
 		to_task_page(totalRecord);
-	})
-
-	$('#add-btn').click(function() {
-		$('#add-modal').modal({
-			backdrop : 'static'
-		})
 	})
 	
 	$(document).on(
