@@ -44,6 +44,15 @@ public class DeviceServiceImpl implements DeviceService {
 	@Autowired
 	private DeviceCurrentAlarmMapper deviceCurrentAlarmMapper;
 
+	/**
+	 * 学到的知识无法应用,让人怀疑真的有用吗???????
+	 * 一次又一次,我想问,到底有用吗,还不如去学算法,fuck
+	 * 快快快,emmmmmm,我不想这样啊,他们到底是怎样开发的呢?????????????????????????//
+	 */
+	
+	/**
+	 * 
+	 */
 	@Override
 	public List<DeviceDetail> getDevices(MyPO po) {
 		// TODO Auto-generated method stub
@@ -278,5 +287,20 @@ public class DeviceServiceImpl implements DeviceService {
 		// TODO Auto-generated method stub
 		DeviceDetail deviceDetail = deviceDetailMapper.selectByPrimaryKey(id);
 		QrCodeUtil.createQrCode(deviceDetail);
+	}
+	
+	@Override
+	public List<String> getDistinctDeviceNames() {
+		// TODO Auto-generated method stub
+		List<String> list = deviceDetailMapper.selectDistinctDeviceNames();
+		return list;	
+	}
+	
+	@Override
+	public void saveIntegrationModel(DeviceDetail deviceDetail, String modelName) {
+		// TODO Auto-generated method stub
+		deviceDetailMapper.insertSelective(deviceDetail);
+		//???????...
+		
 	}
 }

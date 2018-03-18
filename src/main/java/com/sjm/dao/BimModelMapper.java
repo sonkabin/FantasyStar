@@ -27,4 +27,7 @@ public interface BimModelMapper {
     int updateByPrimaryKeySelective(BimModel record);
 
     int updateByPrimaryKey(BimModel record);
+    
+  //self-define
+    List<Long> selectByIds(List<Integer> ids);
 }

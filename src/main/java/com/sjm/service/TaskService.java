@@ -19,4 +19,6 @@ public interface TaskService {
 
 	List<Plan> getPlan(Plan plan);
 
+	void delPlans(String ids);
+
 }

@@ -1,7 +1,6 @@
 package com.sjm.interceptor;
 
 import java.lang.reflect.Method;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

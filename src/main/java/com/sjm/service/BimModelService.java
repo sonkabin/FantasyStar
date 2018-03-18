@@ -17,5 +17,7 @@ public interface BimModelService {
 	void updateModel(BimModel model);
 
 	void delModel(Integer id);
+	
+	void integrationModel(String ids);
 
 }

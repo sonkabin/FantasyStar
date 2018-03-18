@@ -208,4 +208,16 @@
       file_id = #{fileId,jdbcType=BIGINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  
+  <select id="selectByIds" parameterType="java.util.List" resultType="long">
+  	select file_id
+  	from bim_model
+  	<where>
+  		id in 
+  		<foreach collection="list" item="item" open="(" close=")" separator=",">
+  			#{item}
+  		</foreach>
+  	</where>
+  </select>
 </mapper>

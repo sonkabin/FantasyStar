@@ -59,10 +59,19 @@
 				<div class="modal-body" style="height: 800px; overflow: auto;">
 					<form class="form-horizontal" id="add-form">
 						<div class="form-group">
-							<label for="add-device-name" class="col-sm-2 control-label">设备名称</label>
+							<label for="add-model-name" class="col-sm-2 control-label">模型选择</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control" name="deviceName"
-									id="add-device-name">
+								<select class=" search-build-no" name="modelName" id="add-model-name">
+									<option></option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="add-device-name" class="col-sm-2 control-label">设备选择</label>
+							<div class="col-sm-10">
+								<select class="search-build-no" name="deviceName" id="add-device-name">
+									<option></option>
+								</select>
 							</div>
 						</div>
 						<div class="form-group">
@@ -918,6 +927,22 @@
 				}
 
 				$('#add-btn').click(function() {
+					$.ajax({
+						url : baseUrl + '/getAddInfos',
+						method : 'GET',
+						success : function(result){
+							var deviceNames = result.info.deviceNames;
+							var models = result.info.models;
+							$('#add-model-name').empty();
+							$.each(models,function(index,item){
+								$('#add-model-name').append($('<option></option>').text(item.name).val(item.id));
+							});
+							$('#add-device-name').empty();
+							$.each(deviceNames,function(index,item){
+								$('#add-device-name').append($('<option></option>').text(item).val(item));
+							})
+						}
+					});
 					$('#add-modal').modal({
 						backdrop : 'static'
 					})

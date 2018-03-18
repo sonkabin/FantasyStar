@@ -3,55 +3,199 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="assets/css/bootstrap.css" media="screen">
-<link rel="stylesheet"
-	href="assets/js/datepicker/bootstrap-datetimepicker.css" media="screen">
-	
-<script type="text/javascript" src="assets/js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-<script type="text/javascript"
-	src="assets/js/datepicker/bootstrap-datetimepicker.min.js"></script>
-<script type="text/javascript"
-	src="assets/js/datepicker/bootstrap-datetimepicker.zh-CN.js"></script>
 </head>
+
+<script
+	src="https://static.bimface.com/api/BimfaceSDKLoader/BimfaceSDKLoader@latest-release.js"
+	charset="utf-8"></script>
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<script type="text/javascript" src="assets/js/jquery.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+
 <body>
-	<div class="container">
-		<form action="" class="form-horizontal">
-			<div class="form-group">
-				<div class="input-group date form_datetime col-sm-10">
-					<input class="form-control" size="16" type="text" value="" readonly>
-					<span class="input-group-addon"><span
-						class="glyphicon glyphicon-remove"></span></span> <span
-						class="input-group-addon"><span
-						class="glyphicon glyphicon-th"></span></span>
-				</div>
-			</div>
-		</form>
-	</div>
+
+
+	<div class="widget-content">
+            <div class="table-responsive table2excel2" data-tableName="Test Table 1">
+              <table class="table  table-bordered">
+                <thead>
+                  <tr>
+                    <th > 序号 </th>
+                    <th> 报警时间</th>
+                    <th> 报警设备</th>
+                    <th> 设备位置</th>
+                    <th class="td-actions"> </th>
+                  </tr>
+                </thead>
+                <tbody id="table1">
+                  <tr class="warning" id="contentt1">
+                    <td id="xuhao"> 1 </td>
+                    <td id="shijian">2018/2/1 19:15</td>
+                    <td id="shebei">排风口</td>
+                    <td id="weizhi">2栋5楼左侧</td>
+                    <td class="td-actions bao"><!-- <a href="javascript:;" class="btn btn-info btn-small"><i class="btn-icon-only icon-align-justify"> </i></a> -->
+                      <!-- Button trigger modal -->
+                    <button type="button" id="view-btn" >
+                    </button>
+                     <!-- Modal -->
+                    <div class="modal fade" id="view-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="top:40%;left:38%;width: 1000px;">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">报警情况</h4>
+                          </div>
+                          <div class="modal-body" style="max-height: 600px;">
+                            <div id="domId" style="width:100%; height:600px;position:relative;"></div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+             
+            </div>
+          </div>
+
+
 	<script type="text/javascript">
-		$('.form_datetime').datetimepicker({
-			language : 'zh-CN',
-			weekStart : 1,
-			todayBtn : 1,
-			autoclose : 1,
-			todayHighlight : 1,
-			startView : 2,
-			forceParse : 0,
-			showMeridian : 1
-		});
 		$(function(){
-			var baseUrl = 'http://localhost:8080/FantasyStar2';
-			$.ajax({
-				url : baseUrl + '/getNo',
-				method : 'get',
-				success : function(result) {
-					if (result.code == 200) {
-						alert('出现错误')
-						return;
-					}
-				}
+			$('#view-btn').click(function(){
+				$('#view-modal').modal();
 			})
 		})
+	</script>
+
+
+	<script type="text/javascript">
+		// 指定待显示的模型或图纸（viewToken从服务端获取）
+		 var viewToken = 'ba487b01d6df4b3da8900ba53201ff08';
+  
+  // 初始化显示组件
+  var options = new BimfaceSDKLoaderConfig();
+  options.viewToken = viewToken;
+  BimfaceSDKLoader.load(options, successCallback, failureCallback);
+  
+  function successCallback(viewMetaData) {
+  
+    if (viewMetaData.viewType == "dwgView") {
+
+      // ======== 判断是否为2D图纸 ========
+      // 获取DOM元素
+      var dom4Show = document.getElementById('domId');
+    
+      // 配置参数
+      var config = new Glodon.Bimface.Viewer.Viewer2DConfig();
+      config.domElement = dom4Show;
+
+      // 创建viewer2D对象
+      var viewer2D = new Glodon.Bimface.Viewer.Viewer2D(config);
+
+      // 添加模型
+      viewer2D.addView(viewToken);
+      
+      // 监听添加view完成的事件
+      viewer2D.addEventListener(Glodon.Bimface.Viewer.Viewer2DEvent.ViewAdded,function() {
+
+        // 渲染2D模型
+        viewer2D.render();
+
+        // 调用viewer2D对象的Method，可以继续扩展功能
+        
+      });
+      
+    } else if (viewMetaData.viewType == "3DView") {
+  
+      // ======== 判断是否为3D图纸 ========
+      
+      // 获取DOM元素
+      var dom4Show = document.getElementById('domId');
+      
+      // 配置参数
+      var config = new Glodon.Bimface.Viewer.Viewer3DConfig();
+      config.domElement = dom4Show;
+  
+      // 创建viewer3D对象
+      var viewer = new Glodon.Bimface.Viewer.Viewer3D(config);
+  
+      // 添加模型
+      viewer.addView(viewToken);
+      
+      // viewerviewerviewer监听添加view完成的事件
+      viewer.addEventListener(Glodon.Bimface.Viewer.Viewer3DEvent.ViewAdded, function() {
+  
+        // 渲染3D模型
+        viewer.render();
+        viewer.isolateComponentsByObjectData([{
+            "levelName":"Level 1"}],Glodon.Bimface.Viewer.IsolateOption.HideOthers );
+            viewer.render();
+        // 调用viewer3D对象的Method，可以继续扩展功能 
+        
+      });
+      // 监听添加view进行中的时间，可获取添加进度
+      viewer.addEventListener(Glodon.Bimface.Application.WebApplication3DEvent.ViewLoading, function (progress) {
+        console.log(progress);
+      });
+      viewer.hideComponents(["1065162"]);
+      
+      // 首先创建DrawableContainer
+      var drawaleContainerConfig = new Glodon.Bimface.Plugins.Drawable.DrawableContainerConfig();
+      drawaleContainerConfig.viewer = viewer;
+      var drawableContainer = new Glodon.Bimface.Plugins.Drawable.DrawableContainer(drawaleContainerConfig);
+
+      //首先创建一个AnnotationManagerConfig
+      var  annotationconfig=new Glodon.Bimface.Plugins.Annotation.AnnotationManagerConfig();
+      annotationconfig.viewer=viewer;
+      var annotationmanager= new Glodon.Bimface.Plugins.Annotation.AnnotationManager(annotationconfig);
+      //此处是对象，不是个方法
+      var annotationtype= Glodon.Bimface.Plugins.Annotation.AnnotationTypeOption.Circle;
+      console.log(annotationtype);
+      
+
+      var eventManager = Glodon.Bimface.Viewer.Viewer3DEvent;
+      viewer.addEventListener(eventManager.ViewAdded,function() {
+      
+      viewer.render();
+      
+      });  
+
+      // viewer.addEventListener(eventManager.ComponentsSelectionChanged,function(componentData) {
+      //  //console.log(componentData);
+        
+      // if(componentData && componentData.objectId){
+
+        var imageConfig = new Glodon.Bimface.Plugins.Drawable.ImageConfig();
+        // 设置自己的imageUrl
+        imageConfig.src = "img/biaoqian.png";
+        // console.log(componentData);
+        // console.log(componentData.worldPosition);
+        // console.log(componentData.levelName);
+        // console.log(componentData.categoryId);
+        // 通过selection change可以得到构件ID和坐标
+        // imageConfig.worldPosition = componentData.worldPosition;
+        var image = new Glodon.Bimface.Plugins.Drawable.Image(imageConfig);
+        imageConfig.worldPosition.x=-3.3;
+        imageConfig.worldPosition.y=5.3;
+        imageConfig.worldPosition.z=0.3;
+        // image.onClick(function() {
+        //  var wid=image.getWidth()
+        //  alert(wid);
+        // });
+        
+        // 添加image
+        drawableContainer.addItem(image);
+    } 
+  }
+  
+  function failureCallback(error) {
+    console.log(error);
+  };
 	</script>
 </body>
 </html>

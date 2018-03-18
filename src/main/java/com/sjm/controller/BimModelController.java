@@ -53,4 +53,13 @@ public class BimModelController {
 		bimModelService.delModel(id);
 		return Message.success();
 	}
+	
+	/**
+	 * 模型集成
+	 */
+	@RequestMapping(value="/integrationModel/{ids}",method=RequestMethod.POST)
+	public Message integrationModel(@PathVariable("ids")String ids) {
+		bimModelService.integrationModel(ids);
+		return Message.success();
+	}
 }

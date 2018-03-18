@@ -51,5 +51,9 @@ public interface DeviceService {
 
 	void createQrCode(Integer id);
 
+	List<String> getDistinctDeviceNames();
+
+	void saveIntegrationModel(DeviceDetail deviceDetail, String modelName);
+
 	
 }

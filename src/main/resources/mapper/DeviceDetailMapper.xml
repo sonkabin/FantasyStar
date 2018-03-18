@@ -259,7 +259,7 @@
   	<where>
   		(device_name,logic_id) in
   		<foreach collection="list" item="item" open="(" close=")" separator=",">
-  			(#{item[deviceName]},#{item[logicId]})
+  			(#{item.deviceName},#{item.logicId})
   		</foreach>
   	</where>
   </select>
@@ -427,4 +427,10 @@
       easy_broken_thing = #{easyBrokenThing,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <select id="selectDistinctDeviceNames" resultType="java.lang.String">
+  	select distinct device_name 
+  	from device_detail
+  </select>
+  
 </mapper>

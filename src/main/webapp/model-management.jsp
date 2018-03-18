@@ -10,11 +10,13 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <!-- Le styles -->
+<script src="https://static.bimface.com/api/BimfaceSDKLoader/BimfaceSDKLoader@latest-release.js" charset="utf-8"></script>
 <script type="text/javascript" src="assets/js/jquery.js"></script>
 
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/loader-style.css">
 <link rel="stylesheet" href="assets/css/bootstrap.css">
+
 
 
 
@@ -50,6 +52,26 @@
 </head>
 
 <body>
+	<div class="modal fade" id="view-modal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document" style="width:70%;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">模型查看</h4>
+				</div>
+				<div class="modal-body" >
+					<div id="domId" style="width:100%; height:600px;"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- 新增模态框 -->
 	<div class="modal fade" id="add-modal" tabindex="-1" role="dialog"
@@ -383,40 +405,21 @@
 										<button type="button" class="btn btn-primary" id="search-btn">搜索</button>
 										<button type="button" class="btn btn-info" id="reset-search-btn">取消</button>
 										<button type="button" class="btn btn-primary kaoyou" id="add-btn">新增模型</button>
+										<button type="button" class="btn btn-primary kaoyou" id="integration-model-btn">模型集成</button>
 									</form>
 									<table id="example-advanced" class="model-table">
 
-
-
 										<thead>
 											<tr>
-												<th style="width: 5%">#</th>
-												<th style="width: 18%">模型名</th>
-												<th style="width: 20%">创建时间</th>
-												<th style="width: 9%">模型大小</th>
-												<th style="width: 13%">fileld</th>
-												<th style="width: 13%">操作</th>
+												<th><input type="checkbox" id="check-all"/></th>
+												<th>模型名</th>
+												<th>创建时间</th>
+												<th>模型大小</th>
+												<th>fileId</th>
+												<th>操作</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>1</td>
-												<td>2</td>
-												<td>3</td>
-												<td>4</td>
-												<td>5</td>
-												<td><button type="button" class="btn btn-primary">编辑</button>
-													<button type="button" class="btn btn-primary">删除</button></td>
-											</tr>
-											<tr>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-											</tr>
-
 										</tbody>
 									</table>
 
@@ -546,7 +549,7 @@
 			//清空表格
 			$('.model-table tbody').empty();
 			$.each(list, function(index, item) {
-				var idTd = $('<td></td>').append(item.id);
+				var checkBoxTd = $("<td><input type='checkbox' class='check-item'/></td>").attr('id',item.id);
 				var nameTd = $('<td></td>').append(item.name);
 				var createTimeTd = $('<td></td>').append(getDateTime(item.createTime));
 				var sizeTd = $('<td></td>').append(item.size);
@@ -555,13 +558,17 @@
 				var editBtn = $('<button></button>').addClass(
 						'btn btn-info btn-xs edit-btn').append('编辑').attr(
 						'edit-id', item.id);
+				var viewBtn = $('<button></button>').addClass(
+				'btn btn-info btn-xs view-btn').append('查看').attr(
+				'view-id', item.id);
 				var delBtn = $('<button></button>').addClass(
 						'btn btn-danger btn-xs del-btn').append('删除').attr(
 						'del-id', item.id);
-				var btnTd = $('<td></td>').append(editBtn).append(' ').append(
+				
+				var btnTd = $('<td></td>').append(editBtn).append(' ').append(viewBtn).append(' ').append(
 						delBtn);
-
-				$('<tr></tr>').append(idTd).append(nameTd).append(createTimeTd)
+				
+				$('<tr></tr>').append(checkBoxTd).append(nameTd).append(createTimeTd)
 						.append(sizeTd).append(fileIdTd).append(btnTd)
 						.appendTo('.model-table tbody');
 			})
@@ -706,6 +713,24 @@
 			}
 		})
 		
+		//集成模型
+		$('#integration-model-btn').click(function(){
+			var ids = "";
+			$.each($(".check-item:checked"),function(){
+				ids += $(this).parents("tr").find("td:eq(0)").attr('id')+",";
+			});
+			console.info(ids);
+			$.ajax({
+				url : baseUrl+'/integrationModel/' + ids,
+				method : 'POST',
+				success : function(result) {
+					if (result.code == 200) {
+						alert(result.msg)
+					}
+				}
+			})
+		})
+		
 		$('#search-btn').click(function() {
 			to_page(1);
 		})
@@ -713,6 +738,14 @@
 			$('#search-form')[0].reset();
 			to_page(1);
 		})
+		
+		
+		$(document).on("click", ".view-btn", function() {
+			$('#view-modal').modal({
+				backdrop : 'static'
+			})
+		})
+		
 	</script>
 
 	<script>
@@ -803,7 +836,119 @@
 			});
 		});
 	</script>
+	
+	<script type="text/javascript">
 
+// 指定待显示的模型或图纸（viewToken从服务端获取）
+  var viewToken = 'ba487b01d6df4b3da8900ba53201ff08';
+  // var viewToken2 = '7b3202930b974b54ab9627e0c6f90578';
+  
+  // 初始化显示组件
+  var options = new BimfaceSDKLoaderConfig();
+  options.viewToken = viewToken;
+  BimfaceSDKLoader.load(options, successCallback, failureCallback);
+  
+  function successCallback(viewMetaData) {    
+    
+    if (viewMetaData.viewType == "dwgView") {
+    
+      // ======== 判断是否为2D图纸 ========
+    
+      // 获取DOM元素
+      var dom4Show = document.getElementById('domId');
+      var webAppConfig = new Glodon.Bimface.Application.WebApplication2DConfig();
+      webAppConfig.domElement = dom4Show;
+  
+      // 创建WebApplication
+      var app = new Glodon.Bimface.Application.WebApplication2D(webAppConfig);
+  
+      // 添加待显示的图纸
+      app.load(viewToken);
+  
+      // 从WebApplication获取viewer2D对象
+      var viewer2D = app.getViewer();
+      
+      // 调用viewer2D对象的Method，可以继续扩展功能
+      // your code
+      
+    } else if (viewMetaData.viewType == "3DView") {
+    
+      // ======== 判断是否为3D模型 ========
+    
+      // 获取DOM元素
+      var dom4Show = document.getElementById('domId');
+      var webAppConfig = new Glodon.Bimface.Application.WebApplication3DConfig();
+      webAppConfig.domElement = dom4Show;
+
+      var appEvents = Glodon.Bimface.Application.WebApplication3DEvent;
+
+      // 创建WebApplication
+      var app = new Glodon.Bimface.Application.WebApplication3D(webAppConfig);
+  
+      // 添加待显示的模型
+      app.addView(viewToken);
+  
+      // 监听添加view完成的事件
+      app.addEventListener(Glodon.Bimface.Application.WebApplication3DEvent.ViewAdded, function () {
+  
+        // 渲染3D模型
+        // app.render();
+        viewer = app.getViewer();
+        var toolbar = app.getToolbar('MainToolbar');
+                var btnConfig = new Glodon.Bimface.UI.Button.ButtonConfig();
+                btnConfig.title = "隐藏";
+                var btn = new Glodon.Bimface.UI.Button.Button(btnConfig);
+                btn.setHtml(`<button style="width: 50px; height:50px; left: -8px; top: -8px; position: relative; color: white; font-size: 18px;background: rgba(0, 0, 0, 0);opacity: 0.6;border: none;"><a href="xuncha.html" style="text-decoration: none;color: #fff;">巡查</a></button>`);
+                btn.addClassName('btn-test');
+        //         btn.addEventListener('Click', function() {
+        //         viewer.showExclusiveComponentsByObjectData([{"categoryId":-2000032}]);
+                
+        viewer.render();
+        toolbar.insertControl(9, btn);  
+
+
+
+
+      });
+      
+
+      // 监听添加view进行中的时间，可获取添加进度
+      app.addEventListener(Glodon.Bimface.Application.WebApplication3DEvent.ViewLoading, function (progress) {
+        console.log(progress);
+      });
+    }
+    app.addEventListener(Glodon.Bimface.Viewer.Viewer3DEvent.ComponentsSelectionChanged,function(componentData){
+      if(componentData && componentData.objectId){
+       
+        // 首先创建DrawableContainer
+        var drawaleContainerConfig = new Glodon.Bimface.Plugins.Drawable.DrawableContainerConfig();
+        drawaleContainerConfig.app = app;
+        var drawableContainer = new Glodon.Bimface.Plugins.Drawable.DrawableContainer(drawaleContainerConfig);
+        var imageConfig = new Glodon.Bimface.Plugins.Drawable.ImageConfig();
+        
+        // 设置自己的imageUrl
+        imageConfig.src = "flower.png";
+        // 通过selection change可以得到构件ID和坐标
+        imageConfig.worldPosition = componentData.worldPosition;
+        var image = new Glodon.Bimface.Plugins.Drawable.Image(imageConfig);
+        
+        //图片的点击事件
+        image.onClick(function() {
+        var id=image.id;
+        alert(id);
+          });
+          
+        //添加image
+        drawableContainer.addItem(image);
+        }
+      });
+  }
+  
+  function failureCallback(error) {
+    console.log(error);
+  };
+
+</script>
 </body>
 
 </html>

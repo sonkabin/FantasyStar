@@ -12,11 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.sjm.bean.BimModel;
 import com.sjm.bean.Device;
 import com.sjm.bean.DeviceCurrentAlarm;
 import com.sjm.bean.DeviceDetail;
 import com.sjm.bean.DeviceHistoryAlarm;
 import com.sjm.bean.MaintenanceRecord;
+import com.sjm.service.BimModelService;
 import com.sjm.service.DeviceService;
 import com.sjm.util.Message;
 import com.sjm.util.MyPO;
@@ -26,6 +28,9 @@ public class DeviceController {
 	
 	@Autowired
 	private DeviceService deviceService;
+	
+	@Autowired
+	private BimModelService bimModelService;
 
 	@RequestMapping(value="/getDevices",method=RequestMethod.GET)
 	public Message getDevices(@RequestParam(value="pn",defaultValue="1")Integer pn,MyPO po) {
@@ -119,10 +124,23 @@ public class DeviceController {
 		return Message.success();
 	}
 	
+	@RequestMapping(value="/saveIntegrationModel",method=RequestMethod.POST)
+	public Message saveIntegrationModel(DeviceDetail deviceDetail,@RequestParam("modelName")String modelName) {
+		deviceService.saveIntegrationModel(deviceDetail,modelName);
+		return Message.success();
+	}
+	
 	@RequestMapping(value="/createQrCode/{id}",method=RequestMethod.PUT)
 	public Message createQrCode(@PathVariable("id")Integer id) {
 		deviceService.createQrCode(id);
 		return Message.success();
+	}
+	
+	@RequestMapping(value="/getAddInfos",method=RequestMethod.GET)
+	public Message getAddInfos() {
+		List<String> deviceNames = deviceService.getDistinctDeviceNames();
+		List<BimModel> models = bimModelService.getModels(null);
+		return Message.success().add("deviceNames", deviceNames).add("models", models);
 	}
 	
 }

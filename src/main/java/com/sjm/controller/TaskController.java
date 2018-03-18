@@ -31,8 +31,9 @@ public class TaskController {
 	 * 首页保存发布任务
 	 */
 	@RequestMapping(value="/saveTask",method=RequestMethod.POST)
-	public Message saveTask(Task task) {
+	public Message saveTask(Task task,@RequestParam("ids")String ids) {
 		taskService.saveTask(task);
+		taskService.delPlans(ids);
 		return Message.success();
 	}
 	
@@ -78,7 +79,7 @@ public class TaskController {
 	}
 	
 	/**
-	 * 首页中可分配的任务,not finish
+	 * 首页中可分配的任务
 	 */
 	@RequestMapping(value="/getPlans",method=RequestMethod.GET)
 	public Message getIndexTasks(@RequestParam(value="pn",defaultValue="1")Integer pn,Plan plan) {

@@ -797,13 +797,6 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td><input type='checkbox' class='check-item'/></td>
-											<td>1</td>
-											<td>摄像头</td>
-											<td>1</td>
-											<td>维护</td>
-										</tr>
 									</tbody>
 								</table>
 
@@ -1368,7 +1361,9 @@
 		$.each($(".check-item:checked"),function(){
 			type = $(this).parents("tr").find("td:eq(4)").text();
 			buildNo = $(this).parents("tr").find("td:eq(1)").text();
-			device += $(this).parents("tr").find("td:eq(2)").text();
+			//设备名和逻辑id之间用：隔开
+			device += $(this).parents("tr").find("td:eq(2)").text()+":";
+			//设备与设备之间用,隔开
 			device += $(this).parents("tr").find("td:eq(3)").text()+",";
 		});
 		

@@ -31,6 +31,13 @@ public class TaskServiceImpl implements TaskService {
 		task.setCreateTime(new Date());
 		task.setTaskStatus("N");
 		taskMapper.insertSelective(task);
+		
+	}
+	
+	@Override
+	public void delPlans(String ids) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override

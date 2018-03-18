@@ -33,5 +33,7 @@ public interface DeviceDetailMapper {
     
     //self-define
     List<DeviceDetail> selectByNameLogicId(List<Map<String, Object>> device);
+
+	List<String> selectDistinctDeviceNames();
     
 }
