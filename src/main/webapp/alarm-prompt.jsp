@@ -62,27 +62,7 @@
 <div id="win" style="z-index:9999; display:none; POSITION:absolute; left:50%; top:50%s width:600px; height:400px; margin-left:-300px; margin-top:-200px; border:1px solid #888; background-color:#fff; text-align:center"><a href="javascript:closeLogin();">关闭登录框</a>
 
 </div>  
-	
-	<div class="modal fade" id="view-modal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document" style="width:70%;">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h4 class="modal-title">模型查看</h4>
-				</div>
-				<div class="modal-body" style="max-height: 600px;">
-					<div id="domId" style="width:100%; height:600px;position:relative;"></div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
-				</div>
-			</div>
-		</div>
-	</div>
+
 	
 
 	<!-- 详情模态框 -->
@@ -901,8 +881,7 @@
 				var positionTd = $('<td></td>').append(item.position);
 				
 				var viewBtn = $('<button></button>').addClass(
-				'btn btn-info btn-xs view-btn').append('查看').attr(
-				'view-id', item.id);
+				'btn btn-info btn-xs view-btn').append('查看').attr("onclick","location.href='http://localhost:8080/FantasyStar2/view3.jsp'")
 				
 				var detailBtn = $('<button></button>').addClass(
 						'btn btn-info detail-btn').append('详情').attr('detail-id',
@@ -1357,131 +1336,7 @@
 			});
 		});
 	</script>
-	<script type="text/javascript">
-  
-	  // 指定待显示的模型或图纸（viewToken从服务端获取）
-	  var viewToken = 'ba487b01d6df4b3da8900ba53201ff08';
-	  
-	  // 初始化显示组件
-	  var options = new BimfaceSDKLoaderConfig();
-	  options.viewToken = viewToken;
-	  BimfaceSDKLoader.load(options, successCallback, failureCallback);
-	  
-	  function successCallback(viewMetaData) {
-	  
-	    if (viewMetaData.viewType == "dwgView") {
-	
-	      // ======== 判断是否为2D图纸 ========
-	      // 获取DOM元素
-	      var dom4Show = document.getElementById('domId');
-	    
-	      // 配置参数
-	      var config = new Glodon.Bimface.Viewer.Viewer2DConfig();
-	      config.domElement = dom4Show;
-	
-	      // 创建viewer2D对象
-	      var viewer2D = new Glodon.Bimface.Viewer.Viewer2D(config);
-	
-	      // 添加模型
-	      viewer2D.addView(viewToken);
-	      
-	      // 监听添加view完成的事件
-	      viewer2D.addEventListener(Glodon.Bimface.Viewer.Viewer2DEvent.ViewAdded,function() {
-	
-	        // 渲染2D模型
-	        viewer2D.render();
-	
-	        // 调用viewer2D对象的Method，可以继续扩展功能
-	        
-	      });
-	      
-	    } else if (viewMetaData.viewType == "3DView") {
-	  
-	      // ======== 判断是否为3D图纸 ========
-	      
-	      // 获取DOM元素
-	      var dom4Show = document.getElementById('win');
-	      
-	      // 配置参数
-	      var config = new Glodon.Bimface.Viewer.Viewer3DConfig();
-	      config.domElement = dom4Show;
-	  
-	      // 创建viewer3D对象
-	      var viewer = new Glodon.Bimface.Viewer.Viewer3D(config);
-	  
-	      // 添加模型
-	      viewer.addView(viewToken);
-	      
-	      // viewerviewerviewer监听添加view完成的事件
-	      viewer.addEventListener(Glodon.Bimface.Viewer.Viewer3DEvent.ViewAdded, function() {
-	  
-	        // 渲染3D模型
-	        viewer.render();
-	        viewer.isolateComponentsByObjectData([{
-	            "levelName":"Level 1"}],Glodon.Bimface.Viewer.IsolateOption.HideOthers );
-	            viewer.render();
-	        // 调用viewer3D对象的Method，可以继续扩展功能 
-	        
-	      });
-	      // 监听添加view进行中的时间，可获取添加进度
-	      viewer.addEventListener(Glodon.Bimface.Application.WebApplication3DEvent.ViewLoading, function (progress) {
-	        console.log(progress);
-	      });
-	      viewer.hideComponents(["1065162"]);
-	      
-	      // 首先创建DrawableContainer
-	      var drawaleContainerConfig = new Glodon.Bimface.Plugins.Drawable.DrawableContainerConfig();
-	      drawaleContainerConfig.viewer = viewer;
-	      var drawableContainer = new Glodon.Bimface.Plugins.Drawable.DrawableContainer(drawaleContainerConfig);
-	
-	      //首先创建一个AnnotationManagerConfig
-	      var  annotationconfig=new Glodon.Bimface.Plugins.Annotation.AnnotationManagerConfig();
-	      annotationconfig.viewer=viewer;
-	      var annotationmanager= new Glodon.Bimface.Plugins.Annotation.AnnotationManager(annotationconfig);
-	      //此处是对象，不是个方法
-	      var annotationtype= Glodon.Bimface.Plugins.Annotation.AnnotationTypeOption.Circle;
-	      console.log(annotationtype);
-	      
-	
-	      var eventManager = Glodon.Bimface.Viewer.Viewer3DEvent;
-	      viewer.addEventListener(eventManager.ViewAdded,function() {
-	      
-	      viewer.render();
-	      
-	      });  
-	
-	      // viewer.addEventListener(eventManager.ComponentsSelectionChanged,function(componentData) {
-	      //  //console.log(componentData);
-	        
-	      // if(componentData && componentData.objectId){
-	
-	        var imageConfig = new Glodon.Bimface.Plugins.Drawable.ImageConfig();
-	        // 设置自己的imageUrl
-	        imageConfig.src = "img/biaoqian.png";
-	        // console.log(componentData);
-	        // console.log(componentData.worldPosition);
-	        // console.log(componentData.levelName);
-	        // console.log(componentData.categoryId);
-	        // 通过selection change可以得到构件ID和坐标
-	        // imageConfig.worldPosition = componentData.worldPosition;
-	        var image = new Glodon.Bimface.Plugins.Drawable.Image(imageConfig);
-	        imageConfig.worldPosition.x=-3.3;
-	        imageConfig.worldPosition.y=5.3;
-	        imageConfig.worldPosition.z=0.3;
-	        // image.onClick(function() {
-	        //  var wid=image.getWidth()
-	        //  alert(wid);
-	        // });
-	        
-	        // 添加image
-	        drawableContainer.addItem(image);
-	    } 
-	  }
-	  
-	  function failureCallback(error) {
-	    console.log(error);
-	  };
-	</script>
+
 </body>
 
 </html>

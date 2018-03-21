@@ -208,4 +208,15 @@
       operation_type = #{operationType,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <delete id="deleteByIds" parameterType="java.util.List">
+  	delete from plan
+  	<where>
+  		id in 
+  		<foreach collection="list" separator="," open="(" close=")" item="item">
+  			#{item}
+  		</foreach>
+  	</where>
+  </delete>
+  
 </mapper>

@@ -27,4 +27,7 @@ public interface PlanMapper {
     int updateByPrimaryKeySelective(Plan record);
 
     int updateByPrimaryKey(Plan record);
+
+    //self-define
+	void deleteByIds(List<Integer> list);
 }

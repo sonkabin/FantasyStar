@@ -20,4 +20,6 @@ public interface OperationUserService {
 
 	long countOnlinePerson();
 
+	List<String> getOpernames();
+
 }

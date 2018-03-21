@@ -92,14 +92,14 @@
 	<!-- 详情模态框 -->
 	<div class="modal fade" id="detail-modal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog" role="document" style="width: 70%;">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title">详情</h4>
+					<h4 class="modal-title">设备详情</h4>
 				</div>
 				<div class="modal-body" style="height: 800px; overflow: auto;">
 					<form class="form-horizontal" id="detail-form">
@@ -551,10 +551,15 @@
 										.append(
 												$(
 														'<button type="button" class="btn btn-primary info-btn"></button>')
-														.append('查看').attr(
+														.append('详情').attr(
 																'info-id',
-																item.id));
-
+																item.id))
+										.append(
+										$(
+												'<button type="button" class="btn btn-primary"></button>')
+												.append('查看')
+												.attr("onclick","location.href='http://localhost:8080/FantasyStar2/view2.jsp'"))
+								
 								$('<tr></tr>').append(idTd).append(buildNoTd)
 										.append(layerNoTd).append(btnTd)
 										.appendTo('.build-table tbody');

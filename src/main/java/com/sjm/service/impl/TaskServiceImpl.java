@@ -1,5 +1,6 @@
 package com.sjm.service.impl;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -37,7 +38,12 @@ public class TaskServiceImpl implements TaskService {
 	@Override
 	public void delPlans(String ids) {
 		// TODO Auto-generated method stub
-		
+		String[] idStrs = ids.split(",");
+		List<Integer> list  = new ArrayList<>();
+		for(String idStr : idStrs) {
+			list.add(Integer.parseInt(idStr));
+		}
+		planMapper.deleteByIds(list);
 	}
 
 	@Override

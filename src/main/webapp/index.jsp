@@ -209,13 +209,13 @@
 					<h4 class="modal-title">发布任务</h4>
 				</div>
 				<div class="modal-body">
-					<form class="form-horizontal" id="add-form">
+					<form class="form-horizontal" id="add-form" style="margin-top:15px;">
 						<input type="hidden" name="adminName"
 							value="<shiro:principal></shiro:principal>" />
 						<div class="form-group">
 							<label class="col-sm-2 control-label">开始时间</label>
 							<div class="col-sm-10 date form_datetime input-group">
-								<input class="form-control" type="text" value="" readonly id="add-start-time" name="startTime">
+								<input class="form-control" type="text" value="" readonly id="add-start-time" name="startTime" />
 								<span class="input-group-addon ">
 									<span class="glyphicon glyphicon-remove"></span>
 								</span>
@@ -237,28 +237,30 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="add-ouser" class="col-sm-2 control-label">楼号</label>
+							<label for="add-ouser" class="col-sm-2 control-label" style="width:13%;">楼号</label>
 							<div class="col-sm-10">
-								<input class="form-control" type="text" id="add-buildNo" name="buildNo" readonly>
+								<input class="form-control" type="text" id="add-buildNo" name="buildNo" readonly  style="margin-left:8px;">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="add-ouser" class="col-sm-2 control-label">设备</label>
+							<label for="add-ouser" class="col-sm-2 control-label" style="width:13%;">设备</label>
 							<div class="col-sm-10">
-								<input class="form-control" type="text" id="add-device" name="device" readonly>
+								<input class="form-control" type="text" id="add-device" name="device" readonly  style="margin-left:8px;">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="add-ouser" class="col-sm-2 control-label">操作类型</label>
 							<div class="col-sm-10">
-								<input class="form-control" type="text" id="add-operation-type" name="operationType" readonly>
+								<input class="form-control" type="text" id="add-operation-type" name="operationType" readonly style="padding-left: 0;">
 							</div>
 						</div>
+						<input type="hidden" name="ids" id="add-ids"/>
 						<div class="form-group">
 							<label for="add-ouser" class="col-sm-2 control-label">指定人员</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control" name="ouName"
-									id="add-ouser">
+								<select name="ouName" id="add-ouser">
+									
+								</select>
 							</div>
 						</div>
 					</form>
@@ -941,7 +943,7 @@
 		            data:brokenTimesList,
 		            itemStyle: {
 		                    normal: {
-		　　　　　　　　　　　　　　//好，这里就是重头戏了，定义一个list，然后根据所以取得不同的值，这样就实现了，
+		//好，这里就是重头戏了，定义一个list，然后根据所以取得不同的值，这样就实现了，
 		                        color: function(params) {
 		                            // build a color map as your need.
 		                            var colorList = [
@@ -949,7 +951,7 @@
 		                            ];
 		                            return colorList[params.dataIndex]
 		                        },
-		　　　　　　　　　　　　　　//以下为是否显示，显示位置和显示格式的设置了
+		//以下为是否显示，显示位置和显示格式的设置了
 		                        label: {
 		                            show: true,
 		                            position: 'top',
@@ -1213,12 +1215,13 @@
 		$('.task-table tbody').empty();
 		$.each(list, function(index, item) {
 			var checkBoxTd = $("<td><input type='checkbox' class='check-item'/></td>");
+			var hiddenIdTd = $('<input type="hidden"/>').val(item.id);
 			var buildNoTd = $('<td></td>').append(item.buildNo);
 			var deviceTd = $('<td></td>').append(item.deviceName);
 			var logicIdTd = $('<td></td>').append(item.logicId);
 			var operationTypeTd = $('<td></td>').append(item.operationType);
 
-			$('<tr></tr>').append(checkBoxTd).append(buildNoTd)
+			$('<tr></tr>').append(checkBoxTd).append(hiddenIdTd).append(buildNoTd)
 					.append(deviceTd).append(logicIdTd)
 					.append(operationTypeTd).appendTo('.task-table tbody');
 		})
@@ -1355,9 +1358,10 @@
 			return;
 		}
 		
-		var type;
-		var buildNo;
+		var type = "";
+		var buildNo = "";
 		var device="";
+		var ids = "";
 		$.each($(".check-item:checked"),function(){
 			type = $(this).parents("tr").find("td:eq(4)").text();
 			buildNo = $(this).parents("tr").find("td:eq(1)").text();
@@ -1365,11 +1369,27 @@
 			device += $(this).parents("tr").find("td:eq(2)").text()+":";
 			//设备与设备之间用,隔开
 			device += $(this).parents("tr").find("td:eq(3)").text()+",";
+			
+			ids += $(this).parents("tr").find("input:eq(1)").val()+",";
 		});
 		
 		$('#add-buildNo').val(buildNo);
 		$('#add-operation-type').val(type);
 		$('#add-device').val(device);
+		$('#add-ids').val(ids);
+		console.info(ids);
+		
+		//运维人员
+		$.ajax({
+			url : baseUrl + '/getOpernames',
+			method : 'GET',
+			success : function(result){
+				var names = result.info.opernames;
+				for(var i = 0 ; i < names.length ;i++){
+					$('#add-ouser').append($('<option></option>').text(names[i]).val(names[i]));
+				}
+			}
+		})
 		
 		$('#add-modal').modal({
 			backdrop : 'static'
@@ -1381,7 +1401,7 @@
 	$('#save-btn').click(function() {
 		$.ajax({
 			url : baseUrl + '/saveTask',
-			method : 'post',
+			method : 'POST',
 			async : false,
 			data : $('#add-form').serialize(),
 			success : function(result) {
@@ -1449,6 +1469,7 @@
 
 				}
 			})
+			
 			$('#edit-modal').modal('hide');
 			to_task_page(currentPage);
 		})

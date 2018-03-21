@@ -30,6 +30,11 @@ public class TaskController {
 	/**
 	 * 首页保存发布任务
 	 */
+//	@RequestMapping(value="/saveTask",method=RequestMethod.POST)
+//	public Message saveTask(Task task) {
+//		taskService.saveTask(task);
+//		return Message.success();
+//	}
 	@RequestMapping(value="/saveTask",method=RequestMethod.POST)
 	public Message saveTask(Task task,@RequestParam("ids")String ids) {
 		taskService.saveTask(task);

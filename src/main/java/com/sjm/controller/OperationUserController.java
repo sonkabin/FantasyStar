@@ -64,4 +64,10 @@ public class OperationUserController {
 		operationUserService.delOperUser(id);
 		return Message.success();
 	}
+	
+	@RequestMapping(value="/getOpernames",method=RequestMethod.GET)
+	public Message getOpernames() {
+		List<String> opernames = operationUserService.getOpernames();
+		return Message.success().add("opernames", opernames);
+	}
 }

@@ -136,7 +136,7 @@
 	<!-- 修改模态框 -->
 	<div class="modal fade" id="edit-modal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog" role="document" style="width: 70%;">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"
@@ -196,7 +196,7 @@
 	<!-- 详情模态框 -->
 	<div class="modal fade" id="detail-modal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog" role="document" style="width: 70%;">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"

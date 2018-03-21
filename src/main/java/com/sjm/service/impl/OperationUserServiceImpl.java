@@ -77,4 +77,11 @@ public class OperationUserServiceImpl implements OperationUserService {
 		long count = operationUserMapper.countByExample(example);
 		return count;
 	}
+	
+	@Override
+	public List<String> getOpernames() {
+		// TODO Auto-generated method stub
+		List<String> list = operationUserMapper.selectNames();
+		return list;
+	}
 }

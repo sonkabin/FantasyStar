@@ -27,4 +27,7 @@ public interface OperationUserMapper {
     int updateByPrimaryKeySelective(OperationUser record);
 
     int updateByPrimaryKey(OperationUser record);
+
+    //self-define
+	List<String> selectNames();
 }

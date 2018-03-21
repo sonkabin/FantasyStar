@@ -58,7 +58,7 @@
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title">维护详情</h4>
+					<h4 class="modal-title">维护单</h4>
 				</div>
 				<div class="modal-body">
 					<form class="form-horizontal" id="detail-form">

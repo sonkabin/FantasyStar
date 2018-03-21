@@ -287,4 +287,10 @@
       online = #{online,jdbcType=CHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <select id="selectNames" resultType="java.lang.String">
+  	select username 
+  	from operation_user
+  </select>
+  
 </mapper>
