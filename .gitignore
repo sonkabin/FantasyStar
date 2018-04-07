@@ -9,4 +9,4 @@ mbg.xml
 #数据库文件
 db.properties
 #错误文件
-error
+error.txt
