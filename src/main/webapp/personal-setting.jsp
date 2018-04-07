@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Apricot 1.3</title>
+<title>致微</title>
 <script type="text/javascript" src="assets/js/jquery.js"></script>
 
 <link rel="stylesheet" href="assets/css/style.css">
@@ -53,7 +53,7 @@
 
 				<div id="logo-mobile" class="visible-xs">
 					<h1>
-						Apricot<span>v1.3</span>
+						致微<span>v1.3</span>
 					</h1>
 				</div>
 
@@ -114,7 +114,7 @@
 	<div id="skin-select">
 		<div id="logo">
 			<h1>
-				Apricot <span>v1.3</span>
+				致微
 			</h1>
 		</div>
 

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Apricot 1.3</title>
+<title>致微</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -160,7 +160,7 @@
 
 			<div id="logo-mobile" class="visible-xs">
 				<h1>
-					Apricot<span>v1.3</span>
+					致微<span>v1.3</span>
 				</h1>
 			</div>
 
@@ -221,7 +221,7 @@
 	<div id="skin-select">
 		<div id="logo">
 			<h1>
-				Apricot<span>v1.3</span>
+				致微
 			</h1>
 		</div>
 
@@ -387,7 +387,6 @@
 										<button type="button" class="btn btn-primary" id="search-btn">搜索</button>
 										<button type="button" class="btn btn-info" id="reset-search-btn">取消</button>
 										<button type="button" class="btn btn-primary kaoyou" id="add-btn">新增模型</button>
-										<button type="button" class="btn btn-primary kaoyou" id="integration-model-btn">模型集成</button>
 									</form>
 									<table id="example-advanced" class="model-table">
 

@@ -3047,3 +3047,19 @@ small.pull-right {
     margin: 30px 0 20px!important;
     border-bottom: 0px solid #eee!important;
 }
+.bf-image .bf-image-scene {
+	height: 60% !important;
+	width: 50% !important;
+}
+.zuo {
+	float: left;
+}
+.zuoo {
+	height: 20px;
+}
+.zuoz {
+	width:15%;
+	float: left;
+	text-align: left;
+	margin-left: 10px;
+}

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Apricot 1.3</title>
+<title>致微</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -56,7 +56,8 @@
 					</button>
 					<h4 class="modal-title">新增设备</h4>
 				</div>
-				<div class="modal-body" style="height: 800px; overflow: auto;">
+				<div class="modal-body" >
+				<!-- style="height: 800px; overflow: auto;" -->
 					<form class="form-horizontal" id="add-form">
 						<div class="form-group">
 							<label for="add-model-name" class="col-sm-2 control-label">模型选择</label>
@@ -66,132 +67,133 @@
 								</select>
 							</div>
 						</div>
-						<div class="form-group">
-							<label for="add-device-name" class="col-sm-2 control-label">设备选择</label>
-							<div class="col-sm-10">
-								<select class="search-build-no" name="deviceName" id="add-device-name">
-									<option></option>
-								</select>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="add-device-id" class="col-sm-2 control-label">设备编号</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="logicId"
-									id="add-device-id">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="add-type" class="col-sm-2 control-label">设备型号</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="type"
-									id="add-type">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="add-leave-no" class="col-sm-2 control-label">出厂编号</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="leaveFactoryNo"
-									id="add-leave-no">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="add-leave-date" class="col-sm-2 control-label">出厂日期</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="leaveFactoryDate"
-									id="add-leave-date">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="add-install-date" class="col-sm-2 control-label">安装日期</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="installDate"
-									id="add-install-date">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="add-install-position" class="col-sm-2 control-label">安装位置</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="position"
-									id="add-install-position">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="add-available-year" class="col-sm-2 control-label">使用年限(年)</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="avalilabeYear"
-									id="add-available-year">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="add-etc" class="col-sm-2 control-label">备注</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="etc" id="add-etc">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="add-start-date" class="col-sm-2 control-label">启用日期</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="startDate"
-									id="add-start-date">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="add-rated-voltage" class="col-sm-2 control-label">额定电压(V)</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="ratedVoltage"
-									id="add-rated-voltage">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="add-rated-frequency" class="col-sm-2 control-label">额定频率(HZ)</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="ratedFrequency"
-									id="add-rated-frequency">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="add-rated-current" class="col-sm-2 control-label">额定功率(W)</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="ratedCurrent"
-									id="add-rated-current">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="add-apply-factory" class="col-sm-2 control-label">供应商</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="applyFactory"
-									id="add-apply-factory">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="add-apply-phone" class="col-sm-2 control-label">供应商联系电话</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="applyPhone"
-									id="add-apply-phone">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="add-produce-contrary" class="col-sm-2 control-label">制造国家</label>
-							<div class="col-sm-10">
-								<p class="form-control-static" id="add-produce-contrary"></p>
-								<input type="text" class="form-control" name="produceContrary"
-									id="add-produce-contrary">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="add-easy-broken-thing" class="col-sm-2 control-label">易损件</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="easyBrokenThing"
-									id="add-easy-broken-thing">
-							</div>
-						</div>
+<!-- 						<div class="form-group"> -->
+<!-- 							<label for="add-device-name" class="col-sm-2 control-label">设备选择</label> -->
+<!-- 							<div class="col-sm-10"> -->
+<!-- 								<select class="search-build-no" name="deviceName" id="add-device-name"> -->
+<!-- 									<option></option> -->
+<!-- 								</select> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						<div class="form-group"> -->
+<!-- 							<label for="add-device-id" class="col-sm-2 control-label">设备编号</label> -->
+<!-- 							<div class="col-sm-10"> -->
+<!-- 								<input type="text" class="form-control" name="logicId" -->
+<!-- 									id="add-device-id"> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						<div class="form-group"> -->
+<!-- 							<label for="add-type" class="col-sm-2 control-label">设备型号</label> -->
+<!-- 							<div class="col-sm-10"> -->
+<!-- 								<input type="text" class="form-control" name="type" -->
+<!-- 									id="add-type"> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						<div class="form-group"> -->
+<!-- 							<label for="add-leave-no" class="col-sm-2 control-label">出厂编号</label> -->
+<!-- 							<div class="col-sm-10"> -->
+<!-- 								<input type="text" class="form-control" name="leaveFactoryNo" -->
+<!-- 									id="add-leave-no"> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						<div class="form-group"> -->
+<!-- 							<label for="add-leave-date" class="col-sm-2 control-label">出厂日期</label> -->
+<!-- 							<div class="col-sm-10"> -->
+<!-- 								<input type="text" class="form-control" name="leaveFactoryDate" -->
+<!-- 									id="add-leave-date"> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						<div class="form-group"> -->
+<!-- 							<label for="add-install-date" class="col-sm-2 control-label">安装日期</label> -->
+<!-- 							<div class="col-sm-10"> -->
+<!-- 								<input type="text" class="form-control" name="installDate" -->
+<!-- 									id="add-install-date"> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						<div class="form-group"> -->
+<!-- 							<label for="add-install-position" class="col-sm-2 control-label">安装位置</label> -->
+<!-- 							<div class="col-sm-10"> -->
+<!-- 								<input type="text" class="form-control" name="position" -->
+<!-- 									id="add-install-position"> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						<div class="form-group"> -->
+<!-- 							<label for="add-available-year" class="col-sm-2 control-label">使用年限(年)</label> -->
+<!-- 							<div class="col-sm-10"> -->
+<!-- 								<input type="text" class="form-control" name="availableYear" -->
+<!-- 									id="add-available-year"> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						<div class="form-group"> -->
+<!-- 							<label for="add-etc" class="col-sm-2 control-label">备注</label> -->
+<!-- 							<div class="col-sm-10"> -->
+<!-- 								<input type="text" class="form-control" name="etc" id="add-etc"> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						<div class="form-group"> -->
+<!-- 							<label for="add-start-date" class="col-sm-2 control-label">启用日期</label> -->
+<!-- 							<div class="col-sm-10"> -->
+<!-- 								<input type="text" class="form-control" name="startDate" -->
+<!-- 									id="add-start-date"> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						<div class="form-group"> -->
+<!-- 							<label for="add-rated-voltage" class="col-sm-2 control-label">额定电压(V)</label> -->
+<!-- 							<div class="col-sm-10"> -->
+<!-- 								<input type="text" class="form-control" name="ratedVoltage" -->
+<!-- 									id="add-rated-voltage"> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						<div class="form-group"> -->
+<!-- 							<label for="add-rated-frequency" class="col-sm-2 control-label">额定频率(HZ)</label> -->
+<!-- 							<div class="col-sm-10"> -->
+<!-- 								<input type="text" class="form-control" name="ratedFrequency" -->
+<!-- 									id="add-rated-frequency"> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						<div class="form-group"> -->
+<!-- 							<label for="add-rated-current" class="col-sm-2 control-label">额定功率(W)</label> -->
+<!-- 							<div class="col-sm-10"> -->
+<!-- 								<input type="text" class="form-control" name="ratedCurrent" -->
+<!-- 									id="add-rated-current"> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						<div class="form-group"> -->
+<!-- 							<label for="add-apply-factory" class="col-sm-2 control-label">供应商</label> -->
+<!-- 							<div class="col-sm-10"> -->
+<!-- 								<input type="text" class="form-control" name="applyFactory" -->
+<!-- 									id="add-apply-factory"> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						<div class="form-group"> -->
+<!-- 							<label for="add-apply-phone" class="col-sm-2 control-label">供应商联系电话</label> -->
+<!-- 							<div class="col-sm-10"> -->
+<!-- 								<input type="text" class="form-control" name="applyPhone" -->
+<!-- 									id="add-apply-phone"> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						<div class="form-group"> -->
+<!-- 							<label for="add-produce-contrary" class="col-sm-2 control-label">制造国家</label> -->
+<!-- 							<div class="col-sm-10"> -->
+<!-- 								<p class="form-control-static" id="add-produce-contrary"></p> -->
+<!-- 								<input type="text" class="form-control" name="produceContrary" -->
+<!-- 									id="add-produce-contrary"> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						<div class="form-group"> -->
+<!-- 							<label for="add-easy-broken-thing" class="col-sm-2 control-label">易损件</label> -->
+<!-- 							<div class="col-sm-10"> -->
+<!-- 								<input type="text" class="form-control" name="easyBrokenThing" -->
+<!-- 									id="add-easy-broken-thing"> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
 					</form>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
-					<button type="button" class="btn btn-primary save-btn"
-						data-dismiss="modal">保存</button>
+<!-- 					<button type="button" class="btn btn-primary " id="save-btn" -->
+<!-- 						data-dismiss="modal">保存</button> -->
+					<button type="button" class="btn btn-primary "  id="select-model-btn">选择模型</button>
 				</div>
 			</div>
 		</div>
@@ -373,7 +375,7 @@
 
 			<div id="logo-mobile" class="visible-xs">
 				<h1>
-					Apricot<span>v1.3</span>
+					致微<span>v1.3</span>
 				</h1>
 			</div>
 
@@ -434,7 +436,7 @@
 	<div id="skin-select">
 		<div id="logo">
 			<h1>
-				Apricot<span>v1.3</span>
+				致微
 			</h1>
 		</div>
 
@@ -1055,20 +1057,19 @@
 					})
 				}
 
-				$('#save-btn').click(
-						function() {
-							$.ajax({
-								url : baseUrl + '/saveDevice',
-								method : 'post',
-								data : $('#add-form').serialize(),
-								async : false,
-								success : function(result) {
-
-								}
-							})
-							$('#add-modal').modal('hide');
-							to_page(currentPage);
-						})
+				$('#save-btn').click(function() {
+					$.ajax({
+						url : baseUrl + '/saveDevice',
+						method : 'POST',
+						data : $('#add-form').serialize(),
+						async : false,
+						success : function(result) {
+						}
+					})
+					
+					$('#add-modal').modal('hide');
+					to_page(totalRecord);
+				})
 
 				$('#add-modal').on('hidden.bs.modal', function(e) {
 					$('#add-form')[0].reset();
@@ -1101,7 +1102,11 @@
 						}
 					})
 				}
-
+				
+				$('#select-model-btn').click(function(){
+					window.location.href='http://localhost:8080/FantasyStar2/add-device.jsp';
+				})
+				
 			</script>
 
 			<script>

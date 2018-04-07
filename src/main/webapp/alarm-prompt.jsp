@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Apricot V 1.2</title>
+<title>致微</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="admin">
 <meta name="author" content="matirasa">
@@ -240,7 +240,7 @@
 
 			<div id="logo-mobile" class="visible-xs">
 				<h1>
-					Apricot<span>v1.3</span>
+					致微<span>v1.3</span>
 				</h1>
 			</div>
 
@@ -300,7 +300,7 @@
 	<div id="skin-select">
 		<div id="logo">
 			<h1>
-				Apricot<span>v1.3</span>
+				致微
 			</h1>
 		</div>
 
@@ -883,10 +883,7 @@
 				var viewBtn = $('<button></button>').addClass(
 				'btn btn-info btn-xs view-btn').append('查看').attr("onclick","location.href='http://localhost:8080/FantasyStar2/view3.jsp'")
 				
-				var detailBtn = $('<button></button>').addClass(
-						'btn btn-info detail-btn').append('详情').attr('detail-id',
-						item.id).attr('type','current');
-				var btnTd = $('<td></td>').append(detailBtn).append(' ').append(viewBtn);
+				var btnTd = $('<td></td>').append(viewBtn);
 
 				$('<tr></tr>').append(idTd).append(alarmTimeTd)
 						.append(deviceTd).append(logicIdTd).append(positionTd)

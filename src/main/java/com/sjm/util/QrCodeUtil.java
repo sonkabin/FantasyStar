@@ -16,7 +16,7 @@ import com.sjm.bean.DeviceDetail;
 
 public class QrCodeUtil {
 
-	private static final String PATH = "/home/sonkabin/图片/";
+	private static final String PATH = "/home/sonkabin/下载/";
 	private static final String SUFFIX = ".png";
 	
 	public static void createQrCode(DeviceDetail deviceDetail) {

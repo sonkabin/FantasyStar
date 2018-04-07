@@ -2,6 +2,8 @@ package com.sjm.bean;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class DeviceDetail {
     private Integer id;
 
@@ -15,8 +17,10 @@ public class DeviceDetail {
 
     private String leaveFactoryNo;
 
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date leaveFactoryDate;
 
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date installDate;
 
     private String position;
@@ -25,6 +29,7 @@ public class DeviceDetail {
 
     private String etc;
 
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date startDate;
 
     private String ratedVoltage;
@@ -185,12 +190,12 @@ public class DeviceDetail {
 
 	@Override
 	public String toString() {
-		return "id=" + id + ", deviceName=" + deviceName + ", logicId=" + logicId + ", type=" + type
-				+ ", applyFactory=" + applyFactory + ", leaveFactoryNo=" + leaveFactoryNo + ", leaveFactoryDate="
-				+ leaveFactoryDate + ", installDate=" + installDate + ", position=" + position + ", availableYear="
-				+ availableYear + ", etc=" + etc + ", startDate=" + startDate + ", ratedVoltage=" + ratedVoltage
-				+ ", ratedFrequency=" + ratedFrequency + ", ratedCurrent=" + ratedCurrent + ", applyPhone=" + applyPhone
-				+ ", produceContrary=" + produceContrary + ", easyBrokenThing=" + easyBrokenThing;
+		return "\"id\":\"" + id + "\", \"deviceName\":\"" + deviceName + "\", \"logicId\":\"" + logicId + "\", \"type\":\"" + type
+				+ "\", \"applyFactory\":\"" + applyFactory + "\", \"leaveFactoryNo\":\"" + leaveFactoryNo + "\", \"leaveFactoryDate\":\""
+				+ leaveFactoryDate + "\", \"installDate\":\"" + installDate + "\", \"position\":\"" + position + "\", \"availableYear\":\""
+				+ availableYear + "\", \"etc\":\"" + etc + "\", \"startDate\":\"" + startDate + "\", \"ratedVoltage\":\"" + ratedVoltage
+				+ "\", \"ratedFrequency\":\"" + ratedFrequency + "\", \"ratedCurrent\":\"" + ratedCurrent + "\", \"applyPhone\":\"" + applyPhone
+				+ "\", \"produceContrary\":\"" + produceContrary + "\", \"easyBrokenThing\":\"" + easyBrokenThing + "\"";
 	}
     
     

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Apricot 1.3</title>
+<title>致微</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -159,7 +159,7 @@
 
 			<div id="logo-mobile" class="visible-xs">
 				<h1>
-					Apricot<span>v1.3</span>
+					致微<span>v1.3</span>
 				</h1>
 			</div>
 
@@ -219,7 +219,7 @@
 	<div id="skin-select">
 		<div id="logo">
 			<h1>
-				Apricot<span>v1.3</span>
+				致微
 			</h1>
 		</div>
 
@@ -549,12 +549,6 @@
 										item.layerNo);
 								var btnTd = $('<td></td>')
 										.append(
-												$(
-														'<button type="button" class="btn btn-primary info-btn"></button>')
-														.append('详情').attr(
-																'info-id',
-																item.id))
-										.append(
 										$(
 												'<button type="button" class="btn btn-primary"></button>')
 												.append('查看')
@@ -663,7 +657,7 @@
 							var deviceDetails = result.info.deviceDetails;
 							$('.device-table tbody').empty();
 							$.each(deviceDetails, function(index, item) {
-								var nameTd = $('<td></td>').append(item.name);
+								var nameTd = $('<td></td>').append(item.deviceName);
 								var noTd = $('<td></td>').append(item.logicId);
 								var typeTd = $('<td></td>').append(item.type);
 								var applyFactoryTd = $('<td></td>').append(

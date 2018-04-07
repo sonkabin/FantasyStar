@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Apricot 1.3</title>
+<title>致微</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -47,7 +47,9 @@
 <link rel="shortcut icon" href="assets/ico/minus.png">
 </head>
 
-<body>
+<body>	
+	
+
 	<!-- 详情模态框 -->
 	<div class="modal fade" id="detail-modal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
@@ -58,7 +60,7 @@
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title">维护单</h4>
+					<h4 class="modal-title">维修单</h4>
 				</div>
 				<div class="modal-body">
 					<form class="form-horizontal" id="detail-form">
@@ -107,7 +109,9 @@
 						<div class="form-group">
 							<label for="detail-content" class="col-sm-2 control-label">问题描述</label>
 							<div class="col-sm-10">
-								<p class="form-control-static" id="detail-content"></p>
+								<input class="form-control-static" id="detail-content" type="text" style="border:none; color:#a7afba;"/>
+<!-- 								<p class="form-control-static" id="detail-content"></p> -->
+								<button type="button" class="btn btn-info" id="picture-btn">现场图</button>
 							</div>
 						</div>
 						<div class="form-group">
@@ -129,6 +133,26 @@
 							</div>
 						</div>
 					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="modal fade" id="picture-modal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document" style="width: 70%;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">现场图</h4>
+				</div>
+				<div class="modal-body"  style="height: 700px;">
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
@@ -161,7 +185,7 @@
 
 			<div id="logo-mobile" class="visible-xs">
 				<h1>
-					Apricot<span>v1.3</span>
+					致微<span>v1.3</span>
 				</h1>
 			</div>
 
@@ -222,7 +246,7 @@
 	<div id="skin-select">
 		<div id="logo">
 			<h1>
-				Apricot<span>v1.3</span>
+				致微
 			</h1>
 		</div>
 
@@ -600,8 +624,12 @@
 				var ouNameTd = $('<td></td>').append(item.ouName);
 				var createTimeTd = $('<td></td>').append(
 						getDateTime(item.createTime));
-				var maintenanceTimeTd = $('<td></td>').append(
-						getDateTime(item.maintenanceTime));
+				var maintenanceTimeTd;
+				if(item.maintenanceTime == null){
+					maintenanceTimeTd = $('<td></td>').append(item.maintenanceTime);
+				}else{
+					maintenanceTimeTd = $('<td></td>').append(getDateTime(item.maintenanceTime));
+				}
 				var maintenanceStatusTd = $('<td></td>').append(
 						item.maintenanceStatus == 'Y' ? '已维护' : '未维护');
 				var contentTd = $('<td></td>').append(item.content);
@@ -699,7 +727,7 @@
 							$('#detail-maintence-time').text(
 									getDateTime(recordData.maintenanceTime));
 							$('#detail-maintenance-status').text(recordData.maintenanceStatus == "Y" ? '已维护' : '未维护');
-							$('#detail-content').text(recordData.content);
+							$('#detail-content').val(recordData.content);
 							$('#detail-position').text(recordData.position);
 							$('#detail-admin').text(recordData.adminName);
 							$('#detail-maintence-person').text(recordData.maintenancePerson);
@@ -738,6 +766,12 @@
 				}
 			})
 		}
+		
+		$('#picture-btn').click(function(){
+			$('#picture-modal').modal({
+				backdrop : 'static'
+			})
+		});
 		
 	</script>
 

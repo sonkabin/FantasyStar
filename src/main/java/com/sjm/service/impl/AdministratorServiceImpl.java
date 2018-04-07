@@ -32,6 +32,7 @@ public class AdministratorServiceImpl implements AdministratorService {
 		
 		admin.setSalt(param);
 		admin.setPassword(credentials);
+		admin.setStatus("N");
 		administratorMapper.insertSelective(admin);
 	}
 	

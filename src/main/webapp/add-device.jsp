@@ -10,7 +10,9 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <!-- Le styles -->
-<script src="https://static.bimface.com/api/BimfaceSDKLoader/BimfaceSDKLoader@latest-release.js" charset="utf-8"></script>
+<script
+	src="https://static.bimface.com/api/BimfaceSDKLoader/BimfaceSDKLoader@latest-release.js"
+	charset="utf-8"></script>
 <script type="text/javascript" src="assets/js/jquery.js"></script>
 
 <link rel="stylesheet" href="assets/css/style.css">
@@ -53,26 +55,6 @@
 </head>
 
 <body>
-	<div class="modal fade" id="view-modal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document" style="width:70%;">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h4 class="modal-title">模型查看</h4>
-				</div>
-				<div class="modal-body" >
-					
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<!-- 新增模态框 -->
 	<div class="modal fade" id="add-modal" tabindex="-1" role="dialog"
@@ -84,77 +66,148 @@
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title">模型导入</h4>
+					<h4 class="modal-title">新增设备</h4>
 				</div>
-				<div class="modal-body">
-					<form class="form-horizontal" id="add-form"
-						enctype="multipart/form-data">
+				<div class="modal-body" style="height: 800px; overflow: auto;">
+					<form class="form-horizontal" id="add-form">
 						<div class="form-group">
-							<label for="add-model" class="col-sm-2 control-label">上传模型</label>
+							<label for="add-device-name" class="col-sm-2 control-label">设备选择</label>
 							<div class="col-sm-10">
-								<input type="file" class="form-control" name="file"
-									id="add-model">
+								<select class="search-build-no" name="deviceName"
+									id="add-device-name">
+									<option></option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="add-device-id" class="col-sm-2 control-label">设备编号</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="logicId"
+									id="add-device-id">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="add-type" class="col-sm-2 control-label">设备型号</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="type"
+									id="add-type">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="add-leave-no" class="col-sm-2 control-label">出厂编号</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="leaveFactoryNo"
+									id="add-leave-no">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="add-leave-date" class="col-sm-2 control-label">出厂日期</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="leaveFactoryDate"
+									id="add-leave-date">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="add-install-date" class="col-sm-2 control-label">安装日期</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="installDate"
+									id="add-install-date">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="add-install-position" class="col-sm-2 control-label">安装位置</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="position"
+									id="add-install-position">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="add-available-year" class="col-sm-2 control-label">使用年限(年)</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="availableYear"
+									id="add-available-year">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="add-etc" class="col-sm-2 control-label">备注</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="etc" id="add-etc">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="add-start-date" class="col-sm-2 control-label">启用日期</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="startDate"
+									id="add-start-date">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="add-rated-voltage" class="col-sm-2 control-label">额定电压(V)</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="ratedVoltage"
+									id="add-rated-voltage">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="add-rated-frequency" class="col-sm-2 control-label">额定频率(HZ)</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="ratedFrequency"
+									id="add-rated-frequency">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="add-rated-current" class="col-sm-2 control-label">额定功率(W)</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="ratedCurrent"
+									id="add-rated-current">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="add-apply-factory" class="col-sm-2 control-label">供应商</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="applyFactory"
+									id="add-apply-factory">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="add-apply-phone" class="col-sm-2 control-label">供应商联系电话</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="applyPhone"
+									id="add-apply-phone">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="add-produce-contrary" class="col-sm-2 control-label">制造国家</label>
+							<div class="col-sm-10">
+								<p class="form-control-static" id="add-produce-contrary"></p>
+								<input type="text" class="form-control" name="produceContrary"
+									id="add-produce-contrary">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="add-easy-broken-thing" class="col-sm-2 control-label">易损件</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="easyBrokenThing"
+									id="add-easy-broken-thing">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="add-easy-broken-thing" class="col-sm-2 control-label">证书</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="certificate"
+									id="add-certificate">
 							</div>
 						</div>
 					</form>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
-					<button type="button" class="btn btn-primary" id="save-btn">保存</button>
+					<button type="button" class="btn btn-primary " id="save-btn"
+						data-dismiss="modal">保存</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- 修改模态框 -->
-	<div class="modal fade" id="edit-modal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h4 class="modal-title">模型信息修改</h4>
-				</div>
-				<div class="modal-body">
-					<form class="form-horizontal" id="edit-form">
-						<div class="form-group">
-							<label for="edit-name" class="col-sm-2 control-label">模型名</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="name"
-									id="edit-name">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="edit-create-time" class="col-sm-2 control-label">创建时间</label>
-							<div class="col-sm-10">
-								<p class="form-control-static" id="edit-create-time"></p>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="edit-size" class="col-sm-2 control-label">模型大小</label>
-							<div class="col-sm-10">
-								<p class="form-control-static" id="edit-size"></p>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="fileId" class="col-sm-2 control-label">fileId</label>
-							<div class="col-sm-10">
-								<p class="form-control-static" id="fileId"></p>
-							</div>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
-					<button type="button" class="btn btn-primary" id="update-btn">更新</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
 
 	<!-- Preloader -->
 	<div id="preloader">
@@ -239,9 +292,7 @@
 	<!-- SIDE MENU -->
 	<div id="skin-select">
 		<div id="logo">
-			<h1>
-				致微
-			</h1>
+			<h1>致微</h1>
 		</div>
 
 		<a id="toggle"> <span class="entypo-menu"></span>
@@ -362,7 +413,7 @@
 			<ul id="breadcrumb">
 				<li><span class="fontawesome-tasks"></span></li>
 
-				<li><a href="model-management.jsp" title="Sample page 1">模型管理</a></li>
+				<li><a href="device-information.jsp" title="Sample page 1">设备添加</a></li>
 
 
 			</ul>
@@ -378,7 +429,7 @@
 
 							<div class="nest" id="tabletreeClose">
 								<div class="title-alt">
-									<h6>模型查看</h6>
+									<h6>设备添加</h6>
 									<div class="titleClose">
 										<a class="gone" href="#tabletreeClose"> <span
 											class="entypo-cancel"></span>
@@ -390,10 +441,10 @@
 
 								<div class="body-nest" id="tabletree">
 
-									<div id="domId" style="width:100%; height:600px;"></div>
-									
+									<div id="domId" style="width: 100%; height: 600px;"></div>
+
 								</div>
-								
+
 
 							</div>
 
@@ -475,119 +526,106 @@
 		src="assets/js/tree/treetable/javascripts/src/jquery.treetable.js"></script>
 	<script type="text/javascript" src="assets/js/myplugin.js"></script>
 
-	
 	<script type="text/javascript">
+				
+		var baseUrl = 'http://localhost:8080/FantasyStar2';
+	
+		$('#save-btn').click(function() {
+			$.ajax({
+				url : baseUrl + '/saveDevice',
+				method : 'POST',
+				data : $('#add-form').serialize(),
+				async : false,
+				success : function(result) {
+				}
+			})
 
-// 指定待显示的模型或图纸（viewToken从服务端获取）
-  var viewToken = 'a6419c5e364f48a3b268a3b5d61e1658';
-  // var viewToken2 = '7b3202930b974b54ab9627e0c6f90578';
-  
-  // 初始化显示组件
-  var options = new BimfaceSDKLoaderConfig();
-  options.viewToken = viewToken;
-  BimfaceSDKLoader.load(options, successCallback, failureCallback);
-  
-  function successCallback(viewMetaData) {    
-    
-    if (viewMetaData.viewType == "dwgView") {
-    
-      // ======== 判断是否为2D图纸 ========
-    
-      // 获取DOM元素
-      var dom4Show = document.getElementById('domId');
-      var webAppConfig = new Glodon.Bimface.Application.WebApplication2DConfig();
-      webAppConfig.domElement = dom4Show;
-  
-      // 创建WebApplication
-      var app = new Glodon.Bimface.Application.WebApplication2D(webAppConfig);
-  
-      // 添加待显示的图纸
-      app.load(viewToken);
-  
-      // 从WebApplication获取viewer2D对象
-      var viewer2D = app.getViewer();
-      
-      // 调用viewer2D对象的Method，可以继续扩展功能
-      // your code
-      
-    } else if (viewMetaData.viewType == "3DView") {
-    
-      // ======== 判断是否为3D模型 ========
-    
-      // 获取DOM元素
-      var dom4Show = document.getElementById('domId');
-      var webAppConfig = new Glodon.Bimface.Application.WebApplication3DConfig();
-      webAppConfig.domElement = dom4Show;
+			$('#add-modal').modal('hide');
+			to_page(totalRecord);
+		})
+	</script>
 
-      var appEvents = Glodon.Bimface.Application.WebApplication3DEvent;
+	<script type="text/javascript">
+	var viewToken = 'a6419c5e364f48a3b268a3b5d61e1658';
+//	var viewToken = 'a6419c5e364f48a3b268a3b5d61e1658';
+	var view = document.getElementById('domId')
 
-      // 创建WebApplication
-      var app = new Glodon.Bimface.Application.WebApplication3D(webAppConfig);
-  
-      // 添加待显示的模型
-      app.addView(viewToken);
-  
-      // 监听添加view完成的事件
-      app.addEventListener(Glodon.Bimface.Application.WebApplication3DEvent.ViewAdded, function () {
-  
-        // 渲染3D模型
-        // app.render();
-        viewer = app.getViewer();
-        var toolbar = app.getToolbar('MainToolbar');
-                var btnConfig = new Glodon.Bimface.UI.Button.ButtonConfig();
-                btnConfig.title = "隐藏";
-                var btn = new Glodon.Bimface.UI.Button.Button(btnConfig);
-                btn.setHtml(`<button style="width: 50px; height:50px; left: -8px; top: -8px; position: relative; color: white; font-size: 18px;background: rgba(0, 0, 0, 0);opacity: 0.6;border: none;"><a href="xuncha.html" style="text-decoration: none;color: #fff;">巡查</a></button>`);
-                btn.addClassName('btn-test');
-        //         btn.addEventListener('Click', function() {
-        //         viewer.showExclusiveComponentsByObjectData([{"categoryId":-2000032}]);
-                
-        viewer.render();
-        toolbar.insertControl(9, btn);  
+	var bimfaceLoaderConfig = new BimfaceSDKLoaderConfig();
+	bimfaceLoaderConfig.viewToken = viewToken;
+	BimfaceSDKLoader.load(bimfaceLoaderConfig, onSDKLoadSucceeded);
+	
+	function onSDKLoadSucceeded(viewMetaData) {
+		
+		var viewer3DConfig = new Glodon.Bimface.Application.WebApplication3DConfig();
+		viewer3DConfig.domElement = view;
 
+		app = new Glodon.Bimface.Application.WebApplication3D(viewer3DConfig);
+		app.addView(viewToken);
+		viewer = app.getViewer();
+		viewer.hideComponents(["1065162"]);
+		// 首先创建DrawableContainer
+		var drawaleContainerConfig = new Glodon.Bimface.Plugins.Drawable.DrawableContainerConfig();
+		drawaleContainerConfig.viewer = viewer;
+		var drawableContainer = new Glodon.Bimface.Plugins.Drawable.DrawableContainer(drawaleContainerConfig);
 
+		//首先创建一个AnnotationManagerConfig
+		var  annotationconfig=new Glodon.Bimface.Plugins.Annotation.AnnotationManagerConfig();
+		annotationconfig.viewer=viewer;
+		var annotationmanager= new Glodon.Bimface.Plugins.Annotation.AnnotationManager(annotationconfig);
+		//此处是对象，不是个方法
+		var annotationtype= Glodon.Bimface.Plugins.Annotation.AnnotationTypeOption.Circle;
+		console.log(annotationtype);
+		
 
+		var eventManager = Glodon.Bimface.Viewer.Viewer3DEvent;
+		viewer.addEventListener(eventManager.ViewAdded,function() {
+		
+		viewer.render();
+		});  
 
-      });
-      
+		viewer.addEventListener(eventManager.ComponentsSelectionChanged,function(componentData) {
+			//console.log(componentData);
 
-      // 监听添加view进行中的时间，可获取添加进度
-      app.addEventListener(Glodon.Bimface.Application.WebApplication3DEvent.ViewLoading, function (progress) {
-        console.log(progress);
-      });
-    }
-    app.addEventListener(Glodon.Bimface.Viewer.Viewer3DEvent.ComponentsSelectionChanged,function(componentData){
-      if(componentData && componentData.objectId){
-       
-        // 首先创建DrawableContainer
-        var drawaleContainerConfig = new Glodon.Bimface.Plugins.Drawable.DrawableContainerConfig();
-        drawaleContainerConfig.app = app;
-        var drawableContainer = new Glodon.Bimface.Plugins.Drawable.DrawableContainer(drawaleContainerConfig);
-        var imageConfig = new Glodon.Bimface.Plugins.Drawable.ImageConfig();
-        
-        // 设置自己的imageUrl
-        imageConfig.src = "flower.png";
-        // 通过selection change可以得到构件ID和坐标
-        imageConfig.worldPosition = componentData.worldPosition;
-        var image = new Glodon.Bimface.Plugins.Drawable.Image(imageConfig);
-        
-        //图片的点击事件
-        image.onClick(function() {
-        var id=image.id;
-        alert(id);
-          });
-          
-        //添加image
-        drawableContainer.addItem(image);
-        }
-      });
-  }
-  
-  function failureCallback(error) {
-    console.log(error);
-  };
+		if(componentData && componentData.objectId){
 
-</script>
+			var imageConfig = new Glodon.Bimface.Plugins.Drawable.ImageConfig();
+			// 设置自己的imageUrl
+			imageConfig.src = "img/flower.png";
+			console.log(componentData);
+			console.log(componentData.worldPosition);
+			// 通过selection change可以得到构件ID和坐标
+			imageConfig.worldPosition = componentData.worldPosition;
+			var image = new Glodon.Bimface.Plugins.Drawable.Image(imageConfig);
+			image.onClick(function() {
+				//var wid=image.getWidth()
+				//alert(wid);
+				$.ajax({
+					url : baseUrl + '/getAddInfos',
+					method : 'GET',
+					success : function(result) {
+						var deviceNames = result.info.deviceNames;
+						$('#add-device-name').empty();
+						$.each(deviceNames, function(index, item) {
+							$('#add-device-name').append(
+									$('<option></option>').text(item).val(
+											item));
+						})
+					}
+				});
+				$('#add-modal').modal({
+					backdrop : 'static'
+				})
+			});
+			
+			// 添加image
+			drawableContainer.addItem(image);
+
+			
+	}
+		});
+		}
+	
+	</script>
 </body>
 
 </html>

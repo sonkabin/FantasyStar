@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Apricot v 1.2</title>
+<title>致微</title>
 <script type="text/javascript" src="assets/js/jquery.js"></script>
 
 <link rel="stylesheet" href="assets/css/style.css">
@@ -395,7 +395,7 @@
 
 			<div id="logo-mobile" class="visible-xs">
 				<h1>
-					Apricot<span>v1.3</span>
+					致微<span>v1.3</span>
 				</h1>
 			</div>
 
@@ -456,7 +456,7 @@
 	<div id="skin-select">
 		<div id="logo">
 			<h1>
-				Apricot<span>v1.3</span>
+				致微
 			</h1>
 		</div>
 
@@ -613,8 +613,8 @@
 					<div
 						style="float: left; height: 150px; width: 50%; text-align: center; margin-top: 29px; border-right: 2px solid #ccc; background-color: #fff;">
 						<i class="icon icon-user-group"
-							style="font-size: 50px; line-height: 114px;"></i>
-						<p style="margin-top: -7px;">在线运维人员</p>
+							style="font-size: 50px; line-height: 114px;    top: 180px;left: -1090px;right: 100px;position: absolute;"></i>
+						<p style="margin-top: 85px;">在线运维人员</p>
 					</div>
 					<div
 						style="float: left; height: 150px; width: 50%; text-align: center; margin-top: 29px; background-color: #fff;">
@@ -626,8 +626,8 @@
 					<div
 						style="float: left; height: 150px; width: 50%; text-align: center; margin-top: 29px; border-right: 2px solid #ccc; background-color: #fff;">
 						<i class="icon icon-warning"
-							style="font-size: 50px; line-height: 114px;"></i>
-						<p style="margin-top: -7px;">当前报警</p>
+							style="font-size: 50px; line-height: 114px;    position: absolute;right: 613px;top: 185px;"></i>
+						<p style="margin-top: 85px;">当前报警</p>
 					</div>
 					<div
 						style="float: left; height: 150px; width: 50%; text-align: center; margin-top: 29px; background-color: #fff;">

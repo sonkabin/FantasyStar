@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Apricot 1.3</title>
+<title>致微</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -75,8 +75,6 @@
 	</div>
 
 
-
-
 	<!-- Preloader -->
 	<div id="preloader">
 		<div id="status">&nbsp;</div>
@@ -100,7 +98,7 @@
 
 			<div id="logo-mobile" class="visible-xs">
 				<h1>
-					Apricot<span>v1.3</span>
+					致微<span>v1.3</span>
 				</h1>
 			</div>
 
@@ -161,7 +159,7 @@
 	<div id="skin-select">
 		<div id="logo">
 			<h1>
-				Apricot<span>v1.3</span>
+				致微
 			</h1>
 		</div>
 
@@ -299,7 +297,7 @@
 
 							<div class="nest" id="tabletreeClose">
 								<div class="title-alt">
-									<h6>楼层查看</h6>
+									<h6>位置查看</h6>
 									<div class="titleClose">
 										<a class="gone" href="#tabletreeClose"> <span
 											class="entypo-cancel"></span>
@@ -311,8 +309,158 @@
 
 								<div class="body-nest" id="tabletree">
 
-									<div id="domId" style="width:100%; height:600px;position:relative;"></div>
-									
+<!-- 									<div id="domId" style="width:100%; height:600px;position:relative;"></div> -->
+<div id="domId" style="width:50%; height:660px;float: left;"></div>
+<div id="domId2" style="width:50%; height:660px;float: left;"></div>
+										<div class="container">
+  
+  <div>
+    <table class="table table-striped table-bordered device-table" style="margin-top: 695px;">
+                <thead>
+                  <tr>
+                    <th> 设备名 </th>
+                    <th> 设备编号</th>
+                    <th> 设备型号</th>
+                    <th> 供应商</th>
+                    <th> 出厂编号</th>
+                    <th> 出厂日期</th>
+                    <th> 安装日期</th>
+                    <th> 安装位置</th>
+                    <th> 使用年限</th>
+                  </tr>
+                </thead>
+                <tbody id="table1">
+                  <tr>
+                    <td> 空调 </td>
+                    <td> 01-03-021-123 </td>
+                    <td> KC-32/Y </td>
+                    <td>苏州昆拓</td>
+                    <td>齐兴百年</td>
+                    <td>104760003001911</td>
+                    <td>2016/5/20</td>
+                    <td>2016/12/1</td>
+                    <td>4栋3层右侧</td>
+                    <td>5年</td>
+                    <td class="td-actions se"><!-- <a href="javascript:;" class="btn btn-small btn-info"><i class="btn-icon-only icon-align-justify"> </i></a> -->
+                       <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-info btn-small" data-toggle="modal" data-target="#myModal" style="width: 60%;">
+                        <i class="btn-icon-only icon-align-justify"> </i>
+                      </button>
+
+                      <!-- Modal -->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header" style="    height: 25px;background: #fdfcfc;">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel">设备详情</h4>
+                            </div>
+                            <div class="modal-body" style="height:800px; overflow:auto;">
+                              <div class="zuoo">
+                                <p class="zuoz"><b>设备名称</b></p>
+                                <p class="zuo">摄像头</p>
+                              </div><br>
+                              <div class="zuoo">
+                                <p class="zuoz"><b>设备编号</b></p>
+                                <p class="zuo">1</p>
+                              </div><br>
+                              <div class="zuoo">
+                                <p class="zuoz"><b>设备型号</b></p>
+                                <p class="zuo">DS-2CD3232(D)-I5</p>
+                              </div><br>
+                              <div class="zuoo">
+                                <p class="zuoz"><b>出厂编号</b></p>
+                                <p class="zuo">6543</p>
+                              </div><br>
+                              <div class="zuoo">
+                                <p class="zuoz"><b>出厂日期</b></p>
+                                <p class="zuo">2017-11-2</p>
+                              </div><br>
+                              <div class="zuoo">
+                                <p class="zuoz"><b>安装日期</b></p>
+                                <p class="zuo">201-12-1</p>
+                              </div><br>
+                              <div class="zuoo">
+                                <p class="zuoz"><b>安装位置</b></p>
+                                <p class="zuo">1,1</p>
+                              </div><br>
+                              <div class="zuoo">
+                                <p class="zuoz"><b>使用年限</b></p>
+                                <p class="zuo">5年</p>
+                              </div><br>
+                              <div class="zuoo">
+                                <p class="zuoz"><b>备注</b></p>
+                                <p class="zuo">无</p>
+                              </div><br>
+                              <div class="zuoo">
+                                <p class="zuoz"><b>启用日期</b></p>
+                                <p class="zuo">2017-12-2</p>
+                              </div><br>
+                              <div class="zuoo">
+                                <p class="zuoz"><b>额定电压</b></p>
+                                <p class="zuo">5V</p>
+                              </div><br>
+                              <div class="zuoo">
+                                <p class="zuoz"><b>额定频率</b></p>
+                                <p class="zuo">50HZ</p>
+                              </div><br>
+                              <div class="zuoo">
+                                <p class="zuoz"><b>额定功率</b></p>
+                                <p class="zuo">7W</p>
+                              </div><br>
+                              <div class="zuoo">
+                                <p class="zuoz"><b>供应商</b></p>
+                                <p class="zuo">海康威视</p>
+                              </div><br>
+                              <div class="zuoo">
+                                <p class="zuoz"><b>供应商联系电话</b>
+                                <p class="zuo">400-700-5998</p>
+                              </div><br></p><br>
+                              <div class="zuoo">
+                                <p class="zuoz"><b>制造国家</b></p>
+                                <p class="zuo">中国</p>
+                              </div><br>
+                              <div class="zuoo">
+                                <p class="zuoz"><b>易损件</b></p>
+                                <p class="zuo">无</p>
+                              </div><br>
+                              <div class="zuoo">
+                                <p class="zuoz"><b>维修记录</b></p><br>
+                                <table class="table table-striped table-bordered">
+                                  <thead>
+                                    <tr>
+                                      <th> #</th>
+                                      <th> 设备名称 </th>
+                                      <th> 创建人</th>
+                                      <th> 创建时间</th>
+                                      <th> 维护时间</th>
+                                      <th> 问题描述</th>
+                                     
+                                    </tr>
+                                  </thead>
+                                  <tbody id="table1">
+                                    <tr>
+                                      <td>1</td>
+                                      <td> 摄像头 </td>
+                                      <td> test1 </td>
+                                      <td> 2018-1-10 10:10:10 </td>
+                                      <td> 2018-1-11 11:00:20 </td>
+                                      <td>不能正常工作</td>
+                                    </tr>
+                                  </tbody>
+                                </table> 
+  <embed src="img/111.mp4" width="250" height="200">
+  <embed src="img/111.mp4" width="250" height="200">
+
+    <!-- <video width="320" height="240" controls>
+      <source src="movie.mp4" type="video/mp4">
+        <embed src="img/111.mp4" width="320" height="240">
+      </object> 
+    </video> -->
+  </div>
+</div>
+</div>
 								</div>
 								
 
@@ -396,16 +544,61 @@
 		src="assets/js/tree/treetable/javascripts/src/jquery.treetable.js"></script>
 	<script type="text/javascript" src="assets/js/myplugin.js"></script>
 
-	
+
 	<script type="text/javascript">
+	    var baseUrl = "http://localhost:8080/FantasyStar2/";
+		$(function(){
+			$.ajax({
+				url : baseUrl + '/getBuildingDevice/3',
+				method : 'get',
+				success : function(result) {
+					var deviceDetails = result.info.deviceDetails;
+					$('.device-table tbody').empty();
+					$.each(deviceDetails, function(index, item) {
+						var nameTd = $('<td></td>').append(item.deviceName);
+						var noTd = $('<td></td>').append(item.logicId);
+						var typeTd = $('<td></td>').append(item.type);
+						var applyFactoryTd = $('<td></td>').append(
+								item.applyFactory);
+						var leaveFactoryNoTd = $('<td></td>').append(
+								item.leaveFactoryNo);
+						var leaveFactoryDateTd = $('<td></td>').append(
+								getDate(item.leaveFactoryDate));
+						var installDateTd = $('<td></td>').append(
+								getDate(item.installDate));
+						var positionTd = $('<td></td>').append(
+								item.position);
+						var availableYearTd = $('<td></td>').append(
+								item.availableYear);
+
+						$('<tr></tr>').append(nameTd).append(noTd)
+								.append(typeTd).append(applyFactoryTd)
+								.append(leaveFactoryNoTd).append(
+										leaveFactoryDateTd).append(
+										installDateTd).append(
+										positionTd).append(
+										availableYearTd).appendTo(
+										'.device-table tbody');
+					})
+				}
+			})
+		})
+	</script>
+	
+<script type="text/javascript">
   
   // 指定待显示的模型或图纸（viewToken从服务端获取）
-  var viewToken = '2a512724c4dc4ee281fd45f51fc8ff52';
+  var viewToken = 'a6419c5e364f48a3b268a3b5d61e1658';
+  var viewToken2 = '52807b39a1d34a74aa78846ae2db271d';
   
   // 初始化显示组件
   var options = new BimfaceSDKLoaderConfig();
   options.viewToken = viewToken;
-  BimfaceSDKLoader.load(options, successCallback, failureCallback);
+  BimfaceSDKLoader.load(options, successCallback, failureCallback);  
+
+  var options2 = new BimfaceSDKLoaderConfig();
+  options2.viewToken = viewToken2;
+  BimfaceSDKLoader.load(options2, successCallback, failureCallback);
   
   function successCallback(viewMetaData) {
   
@@ -413,17 +606,17 @@
 
       // ======== 判断是否为2D图纸 ========
       // 获取DOM元素
-      var dom4Show = document.getElementById('domId');
+      var dom4Show2 = document.getElementById('domId2');
     
       // 配置参数
-      var config = new Glodon.Bimface.Viewer.Viewer2DConfig();
-      config.domElement = dom4Show;
+      var config2 = new Glodon.Bimface.Viewer.Viewer2DConfig();
+      config2.domElement = dom4Show2;
 
       // 创建viewer2D对象
-      var viewer2D = new Glodon.Bimface.Viewer.Viewer2D(config);
+      var viewer2D = new Glodon.Bimface.Viewer.Viewer2D(config2);
 
       // 添加模型
-      viewer2D.addView(viewToken);
+      viewer2D.addView(viewToken2);
       
       // 监听添加view完成的事件
       viewer2D.addEventListener(Glodon.Bimface.Viewer.Viewer2DEvent.ViewAdded,function() {
@@ -458,7 +651,7 @@
         // 渲染3D模型
         viewer.render();
         viewer.isolateComponentsByObjectData([{
-            "levelName":"Level 1"}],Glodon.Bimface.Viewer.IsolateOption.HideOthers );
+            "levelName":"Level 4"}],Glodon.Bimface.Viewer.IsolateOption.HideOthers );
             viewer.render();
         // 调用viewer3D对象的Method，可以继续扩展功能 
         
@@ -467,7 +660,54 @@
       viewer.addEventListener(Glodon.Bimface.Application.WebApplication3DEvent.ViewLoading, function (progress) {
         console.log(progress);
       });
+      viewer.hideComponents(["1065162"]);
       
+      // 首先创建DrawableContainer
+      var drawaleContainerConfig = new Glodon.Bimface.Plugins.Drawable.DrawableContainerConfig();
+      drawaleContainerConfig.viewer = viewer;
+      var drawableContainer = new Glodon.Bimface.Plugins.Drawable.DrawableContainer(drawaleContainerConfig);
+
+      //首先创建一个AnnotationManagerConfig
+      var  annotationconfig=new Glodon.Bimface.Plugins.Annotation.AnnotationManagerConfig();
+      annotationconfig.viewer=viewer;
+      var annotationmanager= new Glodon.Bimface.Plugins.Annotation.AnnotationManager(annotationconfig);
+      //此处是对象，不是个方法
+      var annotationtype= Glodon.Bimface.Plugins.Annotation.AnnotationTypeOption.Circle;
+      console.log(annotationtype);
+      
+
+      var eventManager = Glodon.Bimface.Viewer.Viewer3DEvent;
+      viewer.addEventListener(eventManager.ViewAdded,function() {
+      
+      viewer.render();
+      
+      });  
+
+      // viewer.addEventListener(eventManager.ComponentsSelectionChanged,function(componentData) {
+      //  //console.log(componentData);
+        
+      // if(componentData && componentData.objectId){
+
+        var imageConfig = new Glodon.Bimface.Plugins.Drawable.ImageConfig();
+        // 设置自己的imageUrl
+        imageConfig.src = "img/biaoqian.png";
+        // console.log(componentData);
+        // console.log(componentData.worldPosition);
+        // console.log(componentData.levelName);
+        // console.log(componentData.categoryId);
+        // 通过selection change可以得到构件ID和坐标
+        // imageConfig.worldPosition = componentData.worldPosition;
+        var image = new Glodon.Bimface.Plugins.Drawable.Image(imageConfig);
+        imageConfig.worldPosition.x=-2031.6627383158836;
+        imageConfig.worldPosition.y=2869.7073042006887;
+        imageConfig.worldPosition.z=13500.330270449967;
+        // image.onClick(function() {
+        //  var wid=image.getWidth()
+        //  alert(wid);
+        // });
+        
+        // 添加image
+        drawableContainer.addItem(image);
     } 
   }
   
