@@ -3063,3 +3063,7 @@ small.pull-right {
 	text-align: left;
 	margin-left: 10px;
 }
+#domId2 .bf-drawable-context {
+	width:50% !important;
+	left:50% !important;
+}

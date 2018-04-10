@@ -34,9 +34,9 @@ public class DeviceController {
 
 	@RequestMapping(value="/getDevices",method=RequestMethod.GET)
 	public Message getDevices(@RequestParam(value="pn",defaultValue="1")Integer pn,MyPO po) {
-		PageHelper.startPage(pn, 5);
+		PageHelper.startPage(pn, 8);
 		List<DeviceDetail> deviceDetails = deviceService.getDevices(po);
-		PageInfo<?> page = new PageInfo<>(deviceDetails, 5);
+		PageInfo<?> page = new PageInfo<>(deviceDetails, 8);
 		return Message.success().add("pageInfo", page);
 	}
 	
@@ -55,9 +55,9 @@ public class DeviceController {
 	
 	@RequestMapping(value="/getMaintainInfos",method=RequestMethod.GET)
 	public Message getMaintainInfos(@RequestParam(value="pn",defaultValue="1")Integer pn,MyPO po) {
-		PageHelper.startPage(pn, 5);
+		PageHelper.startPage(pn, 8);
 		List<MaintenanceRecord> records = deviceService.getMaintainInfos(po);
-		PageInfo<?> page = new PageInfo<>(records, 5);
+		PageInfo<?> page = new PageInfo<>(records, 8);
 		return Message.success().add("pageInfo", page);
 	}
 	

@@ -352,9 +352,9 @@
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
-                            <div class="modal-header" style="    height: 25px;background: #fdfcfc;">
+                            <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                              <h4 class="modal-title" id="myModalLabel">设备详情</h4>
+                              <h4 class="modal-title" >设备详情</h4>
                             </div>
                             <div class="modal-body" style="height:800px; overflow:auto;">
                               <div class="zuoo">
@@ -588,8 +588,8 @@
 <script type="text/javascript">
   
   // 指定待显示的模型或图纸（viewToken从服务端获取）
-  var viewToken = 'a6419c5e364f48a3b268a3b5d61e1658';
-  var viewToken2 = '52807b39a1d34a74aa78846ae2db271d';
+  var viewToken = '23c88893075e4130b37dc89b35650d4d';
+  var viewToken2 = '3fb8d18f4cb3411e832342a253cc5ecf';
   
   // 初始化显示组件
   var options = new BimfaceSDKLoaderConfig();
@@ -662,52 +662,7 @@
       });
       viewer.hideComponents(["1065162"]);
       
-      // 首先创建DrawableContainer
-      var drawaleContainerConfig = new Glodon.Bimface.Plugins.Drawable.DrawableContainerConfig();
-      drawaleContainerConfig.viewer = viewer;
-      var drawableContainer = new Glodon.Bimface.Plugins.Drawable.DrawableContainer(drawaleContainerConfig);
-
-      //首先创建一个AnnotationManagerConfig
-      var  annotationconfig=new Glodon.Bimface.Plugins.Annotation.AnnotationManagerConfig();
-      annotationconfig.viewer=viewer;
-      var annotationmanager= new Glodon.Bimface.Plugins.Annotation.AnnotationManager(annotationconfig);
-      //此处是对象，不是个方法
-      var annotationtype= Glodon.Bimface.Plugins.Annotation.AnnotationTypeOption.Circle;
-      console.log(annotationtype);
       
-
-      var eventManager = Glodon.Bimface.Viewer.Viewer3DEvent;
-      viewer.addEventListener(eventManager.ViewAdded,function() {
-      
-      viewer.render();
-      
-      });  
-
-      // viewer.addEventListener(eventManager.ComponentsSelectionChanged,function(componentData) {
-      //  //console.log(componentData);
-        
-      // if(componentData && componentData.objectId){
-
-        var imageConfig = new Glodon.Bimface.Plugins.Drawable.ImageConfig();
-        // 设置自己的imageUrl
-        imageConfig.src = "img/biaoqian.png";
-        // console.log(componentData);
-        // console.log(componentData.worldPosition);
-        // console.log(componentData.levelName);
-        // console.log(componentData.categoryId);
-        // 通过selection change可以得到构件ID和坐标
-        // imageConfig.worldPosition = componentData.worldPosition;
-        var image = new Glodon.Bimface.Plugins.Drawable.Image(imageConfig);
-        imageConfig.worldPosition.x=-2031.6627383158836;
-        imageConfig.worldPosition.y=2869.7073042006887;
-        imageConfig.worldPosition.z=13500.330270449967;
-        // image.onClick(function() {
-        //  var wid=image.getWidth()
-        //  alert(wid);
-        // });
-        
-        // 添加image
-        drawableContainer.addItem(image);
     } 
   }
   

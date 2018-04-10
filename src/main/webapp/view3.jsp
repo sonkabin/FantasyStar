@@ -548,8 +548,8 @@
 <script type="text/javascript">
   
   // 指定待显示的模型或图纸（viewToken从服务端获取）
-  var viewToken = 'a6419c5e364f48a3b268a3b5d61e1658';
-  var viewToken2 = '52807b39a1d34a74aa78846ae2db271d';
+  var viewToken = '23c88893075e4130b37dc89b35650d4d';
+  var viewToken2 = '3fb8d18f4cb3411e832342a253cc5ecf';
   
   // 初始化显示组件
   var options = new BimfaceSDKLoaderConfig();
@@ -587,6 +587,42 @@
         // 调用viewer2D对象的Method，可以继续扩展功能
         
       });
+      
+      var image;
+      var imageConfig;
+      var imagearry = {}; //创建覆盖物容器
+      // 首先创建DrawableContainer
+      var drawaleContainerConfig;
+      var drawableContainer; 
+      var viewer2D;
+      //定义位置坐标
+           var position0=new Object();
+           position0={"x":5728,"y":10500,"z":0};
+      var positions=[];
+      positions.push(position0);
+      console.log(positions);
+      drawaleContainerConfig = new Glodon.Bimface.Plugins.Drawable.DrawableContainerConfig();
+            drawaleContainerConfig.viewer = viewer2D;
+             drawableContainer = new Glodon.Bimface.Plugins.Drawable.DrawableContainer(drawaleContainerConfig);
+                for(i=0;i<positions.length;i++)
+                {
+                imageConfig = new Glodon.Bimface.Plugins.Drawable.ImageConfig();
+                //设置image的路径
+                imageConfig.src="img/biaoqian.png";
+                // positions[i].x=positions[i].x+100;
+                imageConfig.worldPosition =positions[i];
+                image = new Glodon.Bimface.Plugins.Drawable.Image(imageConfig);
+                //设置image的id
+                image.id="image"+i;
+               
+               
+               
+                // 添加image
+                drawableContainer.addItem(image);
+                }
+                viewer2D.addEventListener(Glodon.Bimface.Viewer.Viewer2DEvent.MouseClicked,function(Position) {
+              console.log(Position);
+          });
       
     } else if (viewMetaData.viewType == "3DView") {
   

@@ -153,6 +153,7 @@
 					<h4 class="modal-title">现场图</h4>
 				</div>
 				<div class="modal-body"  style="height: 700px;">
+					<img alt="现场图" src="img/现场图.png" style="width:100%;">
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>

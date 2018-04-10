@@ -30,9 +30,9 @@ public class BimModelController {
 
 	@RequestMapping(value = "/getModels", method = RequestMethod.GET)
 	public Message getModels(@RequestParam(value = "pn", defaultValue = "1") Integer pn,BimModel model) {
-		PageHelper.startPage(pn, 5);
+		PageHelper.startPage(pn, 10);
 		List<BimModel> models = bimModelService.getModels(model);
-		PageInfo<?> page = new PageInfo<>(models, 5);
+		PageInfo<?> page = new PageInfo<>(models, 10);
 		return Message.success().add("pageInfo", page);
 	}
 

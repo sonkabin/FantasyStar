@@ -546,7 +546,7 @@
 	</script>
 
 	<script type="text/javascript">
-	var viewToken = 'a6419c5e364f48a3b268a3b5d61e1658';
+	var viewToken = 'f3d0cbcdbdaf4a2fb52a6427e3a13b48';
 //	var viewToken = 'a6419c5e364f48a3b268a3b5d61e1658';
 	var view = document.getElementById('domId')
 

@@ -62,9 +62,26 @@
 						<div class="form-group">
 							<label for="add-model-name" class="col-sm-2 control-label">模型选择</label>
 							<div class="col-sm-10">
-								<select class=" search-build-no" name="modelName" id="add-model-name">
-									<option></option>
-								</select>
+								<div class="radio">
+								  <label>
+								    <input type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="..." checked="checked">
+								    <img alt="Ghasem" src="img/chasem.png" style="heigth:30%;width:30%">
+								  </label>
+								</div>
+								<br />
+								<div class="radio">
+								  <label>
+								    <input type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
+								    <img alt="house" src="img/house.png" style="heigth:30%;width:30%">
+								  </label>
+								</div>
+								<br />
+								<div class="radio">
+								  <label>
+								    <input type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
+								    <img alt="gem" src="img/gem.png" style="heigth:30%;width:30%">
+								  </label>
+								</div>
 							</div>
 						</div>
 <!-- 						<div class="form-group"> -->

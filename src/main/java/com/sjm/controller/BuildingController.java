@@ -25,9 +25,9 @@ public class BuildingController {
 
 	@RequestMapping(value="/getBuildings",method=RequestMethod.GET)
 	public Message getBuildings(@RequestParam(value="pn",defaultValue="1")Integer pn,Building building) {
-		PageHelper.startPage(pn, 5);
+		PageHelper.startPage(pn, 8);
 		List<Building> buildings = buildingService.getBuildings(building);
-		PageInfo<?> page = new PageInfo<>(buildings, 5);
+		PageInfo<?> page = new PageInfo<>(buildings, 8);
 		return Message.success().add("pageInfo", page);
 	}
 	

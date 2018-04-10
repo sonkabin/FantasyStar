@@ -47,9 +47,9 @@ public class TaskController {
 	 */
 	@RequestMapping(value="/getTasks",method=RequestMethod.GET)
 	public Message getTasks(@RequestParam(value="pn",defaultValue="1")Integer pn,Task task) {
-		PageHelper.startPage(pn, 5);
+		PageHelper.startPage(pn, 8);
 		List<Task> tasks = taskService.getTasks(task);
-		PageInfo<?> page = new PageInfo<>(tasks, 5);
+		PageInfo<?> page = new PageInfo<>(tasks, 8);
 		return Message.success().add("pageInfo", page);
 	}
 	

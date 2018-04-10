@@ -479,7 +479,7 @@
 	<script type="text/javascript">
 
 // 指定待显示的模型或图纸（viewToken从服务端获取）
-  var viewToken = 'a6419c5e364f48a3b268a3b5d61e1658';
+  var viewToken = '23c88893075e4130b37dc89b35650d4d';
   // var viewToken2 = '7b3202930b974b54ab9627e0c6f90578';
   
   // 初始化显示组件
