@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>致微</title>
+<title>致微后台管理系统</title>
 <script type="text/javascript" src="assets/js/jquery.js"></script>
 
 <link rel="stylesheet" href="assets/css/style.css">
@@ -394,9 +394,7 @@
 
 
 			<div id="logo-mobile" class="visible-xs">
-				<h1>
-					致微<span>v1.3</span>
-				</h1>
+				<h1>致微后台管理系统</h1>
 			</div>
 
 		</div>
@@ -456,7 +454,7 @@
 	<div id="skin-select">
 		<div id="logo">
 			<h1>
-				致微
+				致微后台管理系统
 			</h1>
 		</div>
 
@@ -505,29 +503,6 @@
 								</a></li>
 							</ul></li>
 						<li><a class="tooltip-tip ajax-load"
-							href="task-management.jsp" title="Task-management"> <i
-								class="fontawesome-list-ul"></i> <span>任务管理</span>
-
-						</a></li>
-
-
-
-
-
-						<li><a class="tooltip-tip ajax-load" href="#"
-							title="Dashboard"> <i class="entypo-newspaper"></i> <span>设备管理</span>
-
-						</a>
-							<ul>
-								<li><a class="tooltip-tip2 ajax-load"
-									href="device-information.jsp" title="Device-information"> <span>设备信息</span>
-								</a></li>
-								<li><a class="tooltip-tip2 ajax-load"
-									href="equipment-maintenance.jsp" title="Equipment-maintenance">
-										<span>设备维护</span>
-								</a></li>
-							</ul></li>
-						<li><a class="tooltip-tip ajax-load"
 							href="model-management.jsp" title="Model-management"> <i
 								class="fontawesome-tasks"></i> <span>模型管理</span>
 
@@ -538,21 +513,47 @@
 								class="icon icon-location"></i> <span>楼宇管理</span>
 
 						</a></li>
+						
+						<li><a class="tooltip-tip ajax-load" href="#"
+							title="Dashboard"> <i class="entypo-newspaper"></i> <span>设备管理</span>
+
+						</a>
+							<ul>
+								<li><a class="tooltip-tip2 ajax-load"
+									href="device-information.jsp" title="Device-information"> <span>设备信息</span></a>
+								</li>
+								<li><a class="tooltip-tip2 ajax-load"
+									href="equipment-maintenance.jsp" title="Equipment-maintenance">
+										<span>设备维护</span>
+								</a></li>
+							</ul></li>
+
+						<li><a class="tooltip-tip ajax-load" href="#"
+							title="Dashboard"> <i class="entypo-newspaper"></i> <span>运维管理</span>
+
+						</a>
+							<ul>
+
+								<li><a class="tooltip-tip ajax-load"
+									href="task-management.jsp" title="Task-management"> <i
+										class="fontawesome-list-ul"></i> <span>任务管理</span>
+
+								</a></li>
 
 
+								<li><a class="tooltip-tip "
+									href="historical-question-chart.jsp"
+									title="Historical question chart"> <i
+										class="icon icon-graph-bar"></i> <span>历史问题图表</span>
+								</a></li>
 
-						<li><a class="tooltip-tip "
-							href="historical-question-chart.jsp"
-							title="Historical question chart"> <i
-								class="icon icon-graph-bar"></i> <span>历史问题图表</span>
-						</a></li>
-
-						<li><a class="tooltip-tip ajax-load" href="alarm-prompt.jsp"
-							title="Alarm-prompt"><i class="fontawesome-warning-sign"></i><span>报警提示</span>
-						</a></li>
-						<li><a class="tooltip-tip ajax-load"
-							href="operation-planning.jsp" title="Operation-planning"><i
-								class="fontawesome-calendar"></i><span>运维规划</span></a></li>
+								<li><a class="tooltip-tip ajax-load"
+									href="alarm-prompt.jsp" title="Alarm-prompt"><i
+										class="fontawesome-warning-sign"></i><span>报警提示</span> </a></li>
+								<li><a class="tooltip-tip ajax-load"
+									href="operation-planning.jsp" title="Operation-planning"><i
+										class="fontawesome-calendar"></i><span>运维规划</span></a></li>
+							</ul></li>
 						<li><a class="tooltip-tip ajax-load"
 							href="personal-setting.jsp" title="Personal-setting"><i
 								class="fontawesome-cog"></i><span>个人设置</span></a></li>

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>致微</title>
+<title>致微后台管理系统</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -56,161 +56,164 @@
 					</button>
 					<h4 class="modal-title">新增设备</h4>
 				</div>
-				<div class="modal-body" >
-				<!-- style="height: 800px; overflow: auto;" -->
+				<div class="modal-body">
+					<!-- style="height: 800px; overflow: auto;" -->
 					<form class="form-horizontal" id="add-form">
 						<div class="form-group">
 							<label for="add-model-name" class="col-sm-2 control-label">模型选择</label>
 							<div class="col-sm-10">
 								<div class="radio">
-								  <label>
-								    <input type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="..." checked="checked">
-								    <img alt="Ghasem" src="img/chasem.png" style="heigth:30%;width:30%">
-								  </label>
+									<label> <input type="radio" name="blankRadio"
+										id="blankRadio1" value="option1" aria-label="..."
+										checked="checked"> <img alt="Ghasem"
+										src="img/chasem.png" style="heigth: 30%; width: 30%">
+									</label>
 								</div>
 								<br />
 								<div class="radio">
-								  <label>
-								    <input type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
-								    <img alt="house" src="img/house.png" style="heigth:30%;width:30%">
-								  </label>
+									<label> <input type="radio" name="blankRadio"
+										id="blankRadio1" value="option1" aria-label="..."> <img
+										alt="house" src="img/house.png"
+										style="heigth: 30%; width: 30%">
+									</label>
 								</div>
 								<br />
 								<div class="radio">
-								  <label>
-								    <input type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
-								    <img alt="gem" src="img/gem.png" style="heigth:30%;width:30%">
-								  </label>
+									<label> <input type="radio" name="blankRadio"
+										id="blankRadio1" value="option1" aria-label="..."> <img
+										alt="gem" src="img/gem.png" style="heigth: 30%; width: 30%">
+									</label>
 								</div>
 							</div>
 						</div>
-<!-- 						<div class="form-group"> -->
-<!-- 							<label for="add-device-name" class="col-sm-2 control-label">设备选择</label> -->
-<!-- 							<div class="col-sm-10"> -->
-<!-- 								<select class="search-build-no" name="deviceName" id="add-device-name"> -->
-<!-- 									<option></option> -->
-<!-- 								</select> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 						<div class="form-group"> -->
-<!-- 							<label for="add-device-id" class="col-sm-2 control-label">设备编号</label> -->
-<!-- 							<div class="col-sm-10"> -->
-<!-- 								<input type="text" class="form-control" name="logicId" -->
-<!-- 									id="add-device-id"> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 						<div class="form-group"> -->
-<!-- 							<label for="add-type" class="col-sm-2 control-label">设备型号</label> -->
-<!-- 							<div class="col-sm-10"> -->
-<!-- 								<input type="text" class="form-control" name="type" -->
-<!-- 									id="add-type"> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 						<div class="form-group"> -->
-<!-- 							<label for="add-leave-no" class="col-sm-2 control-label">出厂编号</label> -->
-<!-- 							<div class="col-sm-10"> -->
-<!-- 								<input type="text" class="form-control" name="leaveFactoryNo" -->
-<!-- 									id="add-leave-no"> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 						<div class="form-group"> -->
-<!-- 							<label for="add-leave-date" class="col-sm-2 control-label">出厂日期</label> -->
-<!-- 							<div class="col-sm-10"> -->
-<!-- 								<input type="text" class="form-control" name="leaveFactoryDate" -->
-<!-- 									id="add-leave-date"> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 						<div class="form-group"> -->
-<!-- 							<label for="add-install-date" class="col-sm-2 control-label">安装日期</label> -->
-<!-- 							<div class="col-sm-10"> -->
-<!-- 								<input type="text" class="form-control" name="installDate" -->
-<!-- 									id="add-install-date"> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 						<div class="form-group"> -->
-<!-- 							<label for="add-install-position" class="col-sm-2 control-label">安装位置</label> -->
-<!-- 							<div class="col-sm-10"> -->
-<!-- 								<input type="text" class="form-control" name="position" -->
-<!-- 									id="add-install-position"> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 						<div class="form-group"> -->
-<!-- 							<label for="add-available-year" class="col-sm-2 control-label">使用年限(年)</label> -->
-<!-- 							<div class="col-sm-10"> -->
-<!-- 								<input type="text" class="form-control" name="availableYear" -->
-<!-- 									id="add-available-year"> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 						<div class="form-group"> -->
-<!-- 							<label for="add-etc" class="col-sm-2 control-label">备注</label> -->
-<!-- 							<div class="col-sm-10"> -->
-<!-- 								<input type="text" class="form-control" name="etc" id="add-etc"> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 						<div class="form-group"> -->
-<!-- 							<label for="add-start-date" class="col-sm-2 control-label">启用日期</label> -->
-<!-- 							<div class="col-sm-10"> -->
-<!-- 								<input type="text" class="form-control" name="startDate" -->
-<!-- 									id="add-start-date"> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 						<div class="form-group"> -->
-<!-- 							<label for="add-rated-voltage" class="col-sm-2 control-label">额定电压(V)</label> -->
-<!-- 							<div class="col-sm-10"> -->
-<!-- 								<input type="text" class="form-control" name="ratedVoltage" -->
-<!-- 									id="add-rated-voltage"> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 						<div class="form-group"> -->
-<!-- 							<label for="add-rated-frequency" class="col-sm-2 control-label">额定频率(HZ)</label> -->
-<!-- 							<div class="col-sm-10"> -->
-<!-- 								<input type="text" class="form-control" name="ratedFrequency" -->
-<!-- 									id="add-rated-frequency"> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 						<div class="form-group"> -->
-<!-- 							<label for="add-rated-current" class="col-sm-2 control-label">额定功率(W)</label> -->
-<!-- 							<div class="col-sm-10"> -->
-<!-- 								<input type="text" class="form-control" name="ratedCurrent" -->
-<!-- 									id="add-rated-current"> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 						<div class="form-group"> -->
-<!-- 							<label for="add-apply-factory" class="col-sm-2 control-label">供应商</label> -->
-<!-- 							<div class="col-sm-10"> -->
-<!-- 								<input type="text" class="form-control" name="applyFactory" -->
-<!-- 									id="add-apply-factory"> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 						<div class="form-group"> -->
-<!-- 							<label for="add-apply-phone" class="col-sm-2 control-label">供应商联系电话</label> -->
-<!-- 							<div class="col-sm-10"> -->
-<!-- 								<input type="text" class="form-control" name="applyPhone" -->
-<!-- 									id="add-apply-phone"> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 						<div class="form-group"> -->
-<!-- 							<label for="add-produce-contrary" class="col-sm-2 control-label">制造国家</label> -->
-<!-- 							<div class="col-sm-10"> -->
-<!-- 								<p class="form-control-static" id="add-produce-contrary"></p> -->
-<!-- 								<input type="text" class="form-control" name="produceContrary" -->
-<!-- 									id="add-produce-contrary"> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 						<div class="form-group"> -->
-<!-- 							<label for="add-easy-broken-thing" class="col-sm-2 control-label">易损件</label> -->
-<!-- 							<div class="col-sm-10"> -->
-<!-- 								<input type="text" class="form-control" name="easyBrokenThing" -->
-<!-- 									id="add-easy-broken-thing"> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
+						<!-- 						<div class="form-group"> -->
+						<!-- 							<label for="add-device-name" class="col-sm-2 control-label">设备选择</label> -->
+						<!-- 							<div class="col-sm-10"> -->
+						<!-- 								<select class="search-build-no" name="deviceName" id="add-device-name"> -->
+						<!-- 									<option></option> -->
+						<!-- 								</select> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+						<!-- 						<div class="form-group"> -->
+						<!-- 							<label for="add-device-id" class="col-sm-2 control-label">设备编号</label> -->
+						<!-- 							<div class="col-sm-10"> -->
+						<!-- 								<input type="text" class="form-control" name="logicId" -->
+						<!-- 									id="add-device-id"> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+						<!-- 						<div class="form-group"> -->
+						<!-- 							<label for="add-type" class="col-sm-2 control-label">设备型号</label> -->
+						<!-- 							<div class="col-sm-10"> -->
+						<!-- 								<input type="text" class="form-control" name="type" -->
+						<!-- 									id="add-type"> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+						<!-- 						<div class="form-group"> -->
+						<!-- 							<label for="add-leave-no" class="col-sm-2 control-label">出厂编号</label> -->
+						<!-- 							<div class="col-sm-10"> -->
+						<!-- 								<input type="text" class="form-control" name="leaveFactoryNo" -->
+						<!-- 									id="add-leave-no"> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+						<!-- 						<div class="form-group"> -->
+						<!-- 							<label for="add-leave-date" class="col-sm-2 control-label">出厂日期</label> -->
+						<!-- 							<div class="col-sm-10"> -->
+						<!-- 								<input type="text" class="form-control" name="leaveFactoryDate" -->
+						<!-- 									id="add-leave-date"> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+						<!-- 						<div class="form-group"> -->
+						<!-- 							<label for="add-install-date" class="col-sm-2 control-label">安装日期</label> -->
+						<!-- 							<div class="col-sm-10"> -->
+						<!-- 								<input type="text" class="form-control" name="installDate" -->
+						<!-- 									id="add-install-date"> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+						<!-- 						<div class="form-group"> -->
+						<!-- 							<label for="add-install-position" class="col-sm-2 control-label">安装位置</label> -->
+						<!-- 							<div class="col-sm-10"> -->
+						<!-- 								<input type="text" class="form-control" name="position" -->
+						<!-- 									id="add-install-position"> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+						<!-- 						<div class="form-group"> -->
+						<!-- 							<label for="add-available-year" class="col-sm-2 control-label">使用年限(年)</label> -->
+						<!-- 							<div class="col-sm-10"> -->
+						<!-- 								<input type="text" class="form-control" name="availableYear" -->
+						<!-- 									id="add-available-year"> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+						<!-- 						<div class="form-group"> -->
+						<!-- 							<label for="add-etc" class="col-sm-2 control-label">备注</label> -->
+						<!-- 							<div class="col-sm-10"> -->
+						<!-- 								<input type="text" class="form-control" name="etc" id="add-etc"> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+						<!-- 						<div class="form-group"> -->
+						<!-- 							<label for="add-start-date" class="col-sm-2 control-label">启用日期</label> -->
+						<!-- 							<div class="col-sm-10"> -->
+						<!-- 								<input type="text" class="form-control" name="startDate" -->
+						<!-- 									id="add-start-date"> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+						<!-- 						<div class="form-group"> -->
+						<!-- 							<label for="add-rated-voltage" class="col-sm-2 control-label">额定电压(V)</label> -->
+						<!-- 							<div class="col-sm-10"> -->
+						<!-- 								<input type="text" class="form-control" name="ratedVoltage" -->
+						<!-- 									id="add-rated-voltage"> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+						<!-- 						<div class="form-group"> -->
+						<!-- 							<label for="add-rated-frequency" class="col-sm-2 control-label">额定频率(HZ)</label> -->
+						<!-- 							<div class="col-sm-10"> -->
+						<!-- 								<input type="text" class="form-control" name="ratedFrequency" -->
+						<!-- 									id="add-rated-frequency"> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+						<!-- 						<div class="form-group"> -->
+						<!-- 							<label for="add-rated-current" class="col-sm-2 control-label">额定功率(W)</label> -->
+						<!-- 							<div class="col-sm-10"> -->
+						<!-- 								<input type="text" class="form-control" name="ratedCurrent" -->
+						<!-- 									id="add-rated-current"> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+						<!-- 						<div class="form-group"> -->
+						<!-- 							<label for="add-apply-factory" class="col-sm-2 control-label">供应商</label> -->
+						<!-- 							<div class="col-sm-10"> -->
+						<!-- 								<input type="text" class="form-control" name="applyFactory" -->
+						<!-- 									id="add-apply-factory"> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+						<!-- 						<div class="form-group"> -->
+						<!-- 							<label for="add-apply-phone" class="col-sm-2 control-label">供应商联系电话</label> -->
+						<!-- 							<div class="col-sm-10"> -->
+						<!-- 								<input type="text" class="form-control" name="applyPhone" -->
+						<!-- 									id="add-apply-phone"> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+						<!-- 						<div class="form-group"> -->
+						<!-- 							<label for="add-produce-contrary" class="col-sm-2 control-label">制造国家</label> -->
+						<!-- 							<div class="col-sm-10"> -->
+						<!-- 								<p class="form-control-static" id="add-produce-contrary"></p> -->
+						<!-- 								<input type="text" class="form-control" name="produceContrary" -->
+						<!-- 									id="add-produce-contrary"> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+						<!-- 						<div class="form-group"> -->
+						<!-- 							<label for="add-easy-broken-thing" class="col-sm-2 control-label">易损件</label> -->
+						<!-- 							<div class="col-sm-10"> -->
+						<!-- 								<input type="text" class="form-control" name="easyBrokenThing" -->
+						<!-- 									id="add-easy-broken-thing"> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
 					</form>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
-<!-- 					<button type="button" class="btn btn-primary " id="save-btn" -->
-<!-- 						data-dismiss="modal">保存</button> -->
-					<button type="button" class="btn btn-primary "  id="select-model-btn">选择模型</button>
+					<!-- 					<button type="button" class="btn btn-primary " id="save-btn" -->
+					<!-- 						data-dismiss="modal">保存</button> -->
+					<button type="button" class="btn btn-primary "
+						id="select-model-btn">选择模型</button>
 				</div>
 			</div>
 		</div>
@@ -391,9 +394,7 @@
 
 
 			<div id="logo-mobile" class="visible-xs">
-				<h1>
-					致微<span>v1.3</span>
-				</h1>
+				<h1>致微后台管理系统</h1>
 			</div>
 
 		</div>
@@ -452,9 +453,7 @@
 	<!-- SIDE MENU -->
 	<div id="skin-select">
 		<div id="logo">
-			<h1>
-				致微
-			</h1>
+			<h1>致微后台管理系统</h1>
 		</div>
 
 		<a id="toggle"> <span class="entypo-menu"></span>
@@ -496,29 +495,7 @@
 									title="Operation-personnel-management"> <span>运维人员管理</span>
 								</a></li>
 							</ul></li>
-						<li><a class="tooltip-tip ajax-load"
-							href="task-management.jsp" title="Task-management"> <i
-								class="fontawesome-list-ul"></i> <span>任务管理</span>
 
-						</a></li>
-
-
-
-
-
-						<li><a class="tooltip-tip ajax-load" href="#"
-							title="Dashboard"> <i class="entypo-newspaper"></i> <span>设备管理</span>
-
-						</a>
-							<ul>
-								<li><a class="tooltip-tip2 ajax-load"
-									href="device-information.jsp" title="Device-information"> <span>设备信息</span>
-								</a></li>
-								<li><a class="tooltip-tip2 ajax-load"
-									href="equipment-maintenance.jsp" title="Equipment-maintenance">
-										<span>设备维护</span>
-								</a></li>
-							</ul></li>
 						<li><a class="tooltip-tip ajax-load"
 							href="model-management.jsp" title="Model-management"> <i
 								class="fontawesome-tasks"></i> <span>模型管理</span>
@@ -531,20 +508,46 @@
 
 						</a></li>
 
+						<li><a class="tooltip-tip ajax-load" href="#"
+							title="Dashboard"> <i class="entypo-newspaper"></i> <span>设备管理</span>
+
+						</a>
+							<ul>
+								<li><a class="tooltip-tip2 ajax-load"
+									href="device-information.jsp" title="Device-information"> <span>设备信息</span></a>
+								</li>
+								<li><a class="tooltip-tip2 ajax-load"
+									href="equipment-maintenance.jsp" title="Equipment-maintenance">
+										<span>设备维护</span>
+								</a></li>
+							</ul></li>
+
+						<li><a class="tooltip-tip ajax-load" href="#"
+							title="Dashboard"> <i class="entypo-newspaper"></i> <span>运维管理</span>
+
+						</a>
+							<ul>
+
+								<li><a class="tooltip-tip ajax-load"
+									href="task-management.jsp" title="Task-management"> <i
+										class="fontawesome-list-ul"></i> <span>任务管理</span>
+
+								</a></li>
 
 
-						<li><a class="tooltip-tip "
-							href="historical-question-chart.jsp"
-							title="Historical question chart"> <i
-								class="icon icon-graph-bar"></i> <span>历史问题图表</span>
-						</a></li>
+								<li><a class="tooltip-tip "
+									href="historical-question-chart.jsp"
+									title="Historical question chart"> <i
+										class="icon icon-graph-bar"></i> <span>历史问题图表</span>
+								</a></li>
 
-						<li><a class="tooltip-tip ajax-load" href="alarm-prompt.jsp"
-							title="Alarm-prompt"><i class="fontawesome-warning-sign"></i><span>报警提示</span>
-						</a></li>
-						<li><a class="tooltip-tip ajax-load"
-							href="operation-planning.jsp" title="Operation-planning"><i
-								class="fontawesome-calendar"></i><span>运维规划</span></a></li>
+								<li><a class="tooltip-tip ajax-load"
+									href="alarm-prompt.jsp" title="Alarm-prompt"><i
+										class="fontawesome-warning-sign"></i><span>报警提示</span> </a></li>
+								<li><a class="tooltip-tip ajax-load"
+									href="operation-planning.jsp" title="Operation-planning"><i
+										class="fontawesome-calendar"></i><span>运维规划</span></a></li>
+							</ul></li>
 						<li><a class="tooltip-tip ajax-load"
 							href="personal-setting.jsp" title="Personal-setting"><i
 								class="fontawesome-cog"></i><span>个人设置</span></a></li>
@@ -818,7 +821,7 @@
 					$.ajax({
 						url : baseUrl + '/getDevices',
 						method : 'get',
-						data :  $.param({
+						data : $.param({
 							'pn' : pn
 						}) + '&' + $('#search-form').serialize(),
 						async : false,
@@ -862,11 +865,17 @@
 										var availableYearTd = $('<td></td>')
 												.append(item.availableYear);
 
-										var detailBtn = $('<button type="button" class="btn btn-info info-btn"></button>').append('详情查看')
-															.attr('info-id',item.id);
-										var createBtn = $('<button type="button" class="btn btn-primary create-btn"></button>').append('二维码生成')
-															.attr('create-id',item.id);
-										var btnTd = $('<td></td>').append(detailBtn).append(' ').append(createBtn);
+										var detailBtn = $(
+												'<button type="button" class="btn btn-info info-btn"></button>')
+												.append('详情查看').attr('info-id',
+														item.id);
+										var createBtn = $(
+												'<button type="button" class="btn btn-primary create-btn"></button>')
+												.append('二维码生成').attr(
+														'create-id', item.id);
+										var btnTd = $('<td></td>').append(
+												detailBtn).append(' ').append(
+												createBtn);
 
 										$('<tr></tr>')
 												.append(nameTd)
@@ -945,27 +954,58 @@
 					$('#page-nav').append(ul);
 				}
 
-				$('#add-btn').click(function() {
-					$.ajax({
-						url : baseUrl + '/getAddInfos',
-						method : 'GET',
-						success : function(result){
-							var deviceNames = result.info.deviceNames;
-							var models = result.info.models;
-							$('#add-model-name').empty();
-							$.each(models,function(index,item){
-								$('#add-model-name').append($('<option></option>').text(item.name).val(item.id));
-							});
-							$('#add-device-name').empty();
-							$.each(deviceNames,function(index,item){
-								$('#add-device-name').append($('<option></option>').text(item).val(item));
-							})
-						}
-					});
-					$('#add-modal').modal({
-						backdrop : 'static'
-					})
-				})
+				$('#add-btn')
+						.click(
+								function() {
+									$
+											.ajax({
+												url : baseUrl + '/getAddInfos',
+												method : 'GET',
+												success : function(result) {
+													var deviceNames = result.info.deviceNames;
+													var models = result.info.models;
+													$('#add-model-name')
+															.empty();
+													$
+															.each(
+																	models,
+																	function(
+																			index,
+																			item) {
+																		$(
+																				'#add-model-name')
+																				.append(
+																						$(
+																								'<option></option>')
+																								.text(
+																										item.name)
+																								.val(
+																										item.id));
+																	});
+													$('#add-device-name')
+															.empty();
+													$
+															.each(
+																	deviceNames,
+																	function(
+																			index,
+																			item) {
+																		$(
+																				'#add-device-name')
+																				.append(
+																						$(
+																								'<option></option>')
+																								.text(
+																										item)
+																								.val(
+																										item));
+																	})
+												}
+											});
+									$('#add-modal').modal({
+										backdrop : 'static'
+									})
+								})
 
 				//在创建按钮之前绑定click事件是不能绑定的，所以用on绑定
 				$(document)
@@ -1043,16 +1083,20 @@
 										backdrop : 'static'
 									})
 								})
-								
-				$(document).on("click",".create-btn",function() {
-					$.ajax({
-						url : baseUrl + '/createQrCode/' + $(this).attr('create-id'),
-						method : 'put',
-						success : function(result){
-							alert(result.msg);
-						}
-					})
-				})
+
+				$(document).on(
+						"click",
+						".create-btn",
+						function() {
+							$.ajax({
+								url : baseUrl + '/createQrCode/'
+										+ $(this).attr('create-id'),
+								method : 'put',
+								success : function(result) {
+									alert(result.msg);
+								}
+							})
+						})
 
 				function build_record_table(list) {
 					//清空表格
@@ -1083,7 +1127,7 @@
 						success : function(result) {
 						}
 					})
-					
+
 					$('#add-modal').modal('hide');
 					to_page(totalRecord);
 				})
@@ -1099,31 +1143,36 @@
 					$('#search-form')[0].reset();
 					to_page(1);
 				})
-				
-				function build_search_form(){
+
+				function build_search_form() {
 					$.ajax({
 						url : baseUrl + '/getNo',
 						method : 'get',
 						success : function(result) {
 							var no = result.info.no;
 							$('#search-build-no').empty();
-							$('#search-build-no').append($('<option></option>'));
-							for(var i = 1;i <= no.buildNo;i++){
-								$('#search-build-no').append($('<option></option>').text(i).val(i));
+							$('#search-build-no')
+									.append($('<option></option>'));
+							for (var i = 1; i <= no.buildNo; i++) {
+								$('#search-build-no').append(
+										$('<option></option>').text(i).val(i));
 							}
 							$('#search-layer-no').empty();
-							$('#search-layer-no').append($('<option></option>'));
-							for(var i = 1;i <= no.layerNo;i++){
-								$('#search-layer-no').append($('<option></option>').text(i).val(i));
+							$('#search-layer-no')
+									.append($('<option></option>'));
+							for (var i = 1; i <= no.layerNo; i++) {
+								$('#search-layer-no').append(
+										$('<option></option>').text(i).val(i));
 							}
 						}
 					})
 				}
-				
-				$('#select-model-btn').click(function(){
-					window.location.href='http://localhost:8080/FantasyStar2/add-device.jsp';
-				})
-				
+
+				$('#select-model-btn')
+						.click(
+								function() {
+									window.location.href = 'http://localhost:8080/FantasyStar2/add-device.jsp';
+								})
 			</script>
 
 			<script>

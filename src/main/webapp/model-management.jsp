@@ -5,12 +5,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>致微</title>
+<title>致微后台管理系统</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
 <!-- Le styles -->
-<script src="https://static.bimface.com/api/BimfaceSDKLoader/BimfaceSDKLoader@latest-release.js" charset="utf-8"></script>
+<script
+	src="https://static.bimface.com/api/BimfaceSDKLoader/BimfaceSDKLoader@latest-release.js"
+	charset="utf-8"></script>
 <script type="text/javascript" src="assets/js/jquery.js"></script>
 
 <link rel="stylesheet" href="assets/css/style.css">
@@ -53,7 +55,7 @@
 </head>
 
 <body>
-	
+
 
 	<!-- 新增模态框 -->
 	<div class="modal fade" id="add-modal" tabindex="-1" role="dialog"
@@ -159,9 +161,7 @@
 
 
 			<div id="logo-mobile" class="visible-xs">
-				<h1>
-					致微<span>v1.3</span>
-				</h1>
+				<h1>致微后台管理系统</h1>
 			</div>
 
 		</div>
@@ -220,9 +220,7 @@
 	<!-- SIDE MENU -->
 	<div id="skin-select">
 		<div id="logo">
-			<h1>
-				致微
-			</h1>
+			<h1>致微后台管理系统</h1>
 		</div>
 
 		<a id="toggle"> <span class="entypo-menu"></span>
@@ -259,14 +257,16 @@
 								</a></li>
 							</ul></li>
 						<li><a class="tooltip-tip ajax-load"
-							href="task-management.jsp" title="Task-management"> <i
-								class="fontawesome-list-ul"></i> <span>任务管理</span>
+							href="model-management.jsp" title="Model-management"> <i
+								class="fontawesome-tasks"></i> <span>模型管理</span>
 
 						</a></li>
 
+						<li><a class="tooltip-tip ajax-load"
+							href="building-management.jsp" title="Building-management"> <i
+								class="icon icon-location"></i> <span>楼宇管理</span>
 
-
-
+						</a></li>
 
 						<li><a class="tooltip-tip ajax-load" href="#"
 							title="Dashboard"> <i class="entypo-newspaper"></i> <span>设备管理</span>
@@ -281,32 +281,33 @@
 										<span>设备维护</span>
 								</a></li>
 							</ul></li>
-						<li><a class="tooltip-tip ajax-load"
-							href="model-management.jsp" title="Model-management"> <i
-								class="fontawesome-tasks"></i> <span>模型管理</span>
 
-						</a></li>
+						<li><a class="tooltip-tip ajax-load" href="#"
+							title="Dashboard"> <i class="entypo-newspaper"></i> <span>运维管理</span>
 
-						<li><a class="tooltip-tip ajax-load"
-							href="building-management.jsp" title="Building-management"> <i
-								class="icon icon-location"></i> <span>楼宇管理</span>
+						</a>
+							<ul>
 
-						</a></li>
+								<li><a class="tooltip-tip ajax-load"
+									href="task-management.jsp" title="Task-management"> <i
+										class="fontawesome-list-ul"></i> <span>任务管理</span>
+
+								</a></li>
 
 
+								<li><a class="tooltip-tip "
+									href="historical-question-chart.jsp"
+									title="Historical question chart"> <i
+										class="icon icon-graph-bar"></i> <span>历史问题图表</span>
+								</a></li>
 
-						<li><a class="tooltip-tip "
-							href="historical-question-chart.jsp"
-							title="Historical question chart"> <i
-								class="icon icon-graph-bar"></i> <span>历史问题图表</span>
-						</a></li>
-
-						<li><a class="tooltip-tip ajax-load" href="alarm-prompt.jsp"
-							title="Alarm-prompt"><i class="fontawesome-warning-sign"></i><span>报警提示</span>
-						</a></li>
-						<li><a class="tooltip-tip ajax-load"
-							href="operation-planning.jsp" title="Operation-planning"><i
-								class="fontawesome-calendar"></i><span>运维规划</span></a></li>
+								<li><a class="tooltip-tip ajax-load"
+									href="alarm-prompt.jsp" title="Alarm-prompt"><i
+										class="fontawesome-warning-sign"></i><span>报警提示</span> </a></li>
+								<li><a class="tooltip-tip ajax-load"
+									href="operation-planning.jsp" title="Operation-planning"><i
+										class="fontawesome-calendar"></i><span>运维规划</span></a></li>
+							</ul></li>
 						<li><a class="tooltip-tip ajax-load"
 							href="personal-setting.jsp" title="Personal-setting"><i
 								class="fontawesome-cog"></i><span>个人设置</span></a></li>
@@ -377,22 +378,24 @@
 											<p class="form-control-static">模型名</p>
 										</div>
 										<div class="form-group">
-											<label for="model-name" class="sr-only">Model-name</label>
-											<input type="text" class="form-control" id="model-name" name="name">
+											<label for="model-name" class="sr-only">Model-name</label> <input
+												type="text" class="form-control" id="model-name" name="name">
 										</div>
 
 
 
 										<!--<button type="submit" class="btn btn-default">Confirm identity</button>-->
 										<button type="button" class="btn btn-primary" id="search-btn">搜索</button>
-										<button type="button" class="btn btn-info" id="reset-search-btn">取消</button>
-										<button type="button" class="btn btn-primary kaoyou" id="add-btn">新增模型</button>
+										<button type="button" class="btn btn-info"
+											id="reset-search-btn">取消</button>
+										<button type="button" class="btn btn-primary kaoyou"
+											id="add-btn">新增模型</button>
 									</form>
 									<table id="example-advanced" class="model-table">
 
 										<thead>
 											<tr>
-												<th><input type="checkbox" id="check-all"/></th>
+												<th><input type="checkbox" id="check-all" /></th>
 												<th>模型名</th>
 												<th>创建时间</th>
 												<th>模型大小</th>
@@ -508,7 +511,7 @@
 		});
 		function to_page(pn) {
 			$.ajax({
-				url : baseUrl+'/getModels',
+				url : baseUrl + '/getModels',
 				method : 'get',
 				data : $.param({
 					'pn' : pn
@@ -529,29 +532,43 @@
 		function build_table(list) {
 			//清空表格
 			$('.model-table tbody').empty();
-			$.each(list, function(index, item) {
-				var checkBoxTd = $("<td><input type='checkbox' class='check-item'/></td>").attr('id',item.id);
-				var nameTd = $('<td></td>').append(item.name);
-				var createTimeTd = $('<td></td>').append(getDateTime(item.createTime));
-				var sizeTd = $('<td></td>').append(item.size);
-				var fileIdTd = $('<td></td>').append(item.fileId);
+			$
+					.each(
+							list,
+							function(index, item) {
+								var checkBoxTd = $(
+										"<td><input type='checkbox' class='check-item'/></td>")
+										.attr('id', item.id);
+								var nameTd = $('<td></td>').append(item.name);
+								var createTimeTd = $('<td></td>').append(
+										getDateTime(item.createTime));
+								var sizeTd = $('<td></td>').append(item.size);
+								var fileIdTd = $('<td></td>').append(
+										item.fileId);
 
-				var editBtn = $('<button></button>').addClass(
-						'btn btn-info btn-xs edit-btn').append('编辑').attr(
-						'edit-id', item.id);
-				var viewBtn = $('<button></button>').addClass(
-				'btn btn-info btn-xs view-btn').append('查看').attr("onclick","location.href='http://localhost:8080/FantasyStar2/view1.jsp'"); 
-				var delBtn = $('<button></button>').addClass(
-						'btn btn-danger btn-xs del-btn').append('删除').attr(
-						'del-id', item.id);
-				
-				var btnTd = $('<td></td>').append(editBtn).append(' ').append(viewBtn).append(' ').append(
-						delBtn);
-				
-				$('<tr></tr>').append(checkBoxTd).append(nameTd).append(createTimeTd)
-						.append(sizeTd).append(fileIdTd).append(btnTd)
-						.appendTo('.model-table tbody');
-			})
+								var editBtn = $('<button></button>').addClass(
+										'btn btn-info btn-xs edit-btn').append(
+										'编辑').attr('edit-id', item.id);
+								var viewBtn = $('<button></button>')
+										.addClass(
+												'btn btn-info btn-xs view-btn')
+										.append('查看')
+										.attr("onclick",
+												"location.href='http://localhost:8080/FantasyStar2/view1.jsp'");
+								var delBtn = $('<button></button>').addClass(
+										'btn btn-danger btn-xs del-btn')
+										.append('删除').attr('del-id', item.id);
+
+								var btnTd = $('<td></td>').append(editBtn)
+										.append(' ').append(viewBtn)
+										.append(' ').append(delBtn);
+
+								$('<tr></tr>').append(checkBoxTd)
+										.append(nameTd).append(createTimeTd)
+										.append(sizeTd).append(fileIdTd)
+										.append(btnTd).appendTo(
+												'.model-table tbody');
+							})
 		}
 
 		//解析显示分页信想
@@ -617,7 +634,7 @@
 		//保存模型
 		$('#save-btn').click(function() {
 			$.ajax({
-				url : baseUrl+'/uploadBim',
+				url : baseUrl + '/uploadBim',
 				method : 'post',
 				cache : false,
 				data : new FormData($('#add-form')[0]),
@@ -642,28 +659,32 @@
 		})
 
 		//在创建按钮之前绑定click事件是不能绑定的，所以用on绑定
-		$(document).on("click", ".edit-btn", function() {
-			$.ajax({
-				url : baseUrl+'/getModel/' + $(this).attr('edit-id'),
-				method : 'get',
-				success : function(result) {
-					var modelData = result.info.model;
-					$('#edit-name').val(modelData.name);
-					$('#edit-create-time').text(getDateTime(modelData.createTime));
-					$('#edit-size').text(modelData.size);
-					$('#fileId').text(modelData.fileId);
-				}
-			})
-			$('#edit-modal').modal({
-				backdrop : 'static'
-			})
-			//为更新按钮绑定id
-			$('#update-btn').attr('edit-id', $(this).attr('edit-id'));
-		})
-		
+		$(document).on(
+				"click",
+				".edit-btn",
+				function() {
+					$.ajax({
+						url : baseUrl + '/getModel/' + $(this).attr('edit-id'),
+						method : 'get',
+						success : function(result) {
+							var modelData = result.info.model;
+							$('#edit-name').val(modelData.name);
+							$('#edit-create-time').text(
+									getDateTime(modelData.createTime));
+							$('#edit-size').text(modelData.size);
+							$('#fileId').text(modelData.fileId);
+						}
+					})
+					$('#edit-modal').modal({
+						backdrop : 'static'
+					})
+					//为更新按钮绑定id
+					$('#update-btn').attr('edit-id', $(this).attr('edit-id'));
+				})
+
 		$('#update-btn').click(function() {
 			$.ajax({
-				url : baseUrl+'/updateModel/' + $(this).attr('edit-id'),
+				url : baseUrl + '/updateModel/' + $(this).attr('edit-id'),
 				method : 'put',
 				data : $('#edit-form').serialize(),
 				async : false,
@@ -674,13 +695,13 @@
 			$('#edit-modal').modal('hide');
 			to_page(currentPage);
 		})
-		
+
 		$(document).on('click', '.del-btn', function() {
 			var name = $(this).parents('tr').find('td:eq(0)').text();
 			var id = $(this).attr('del-id');
 			if (confirm('确定要删除模型[' + name + ']吗?')) {
 				$.ajax({
-					url : baseUrl+'/delModel/' + id,
+					url : baseUrl + '/delModel/' + id,
 					method : 'delete',
 					async : false,
 					success : function(result) {
@@ -692,16 +713,16 @@
 				to_page(currentPage);
 			}
 		})
-		
+
 		//集成模型
-		$('#integration-model-btn').click(function(){
+		$('#integration-model-btn').click(function() {
 			var ids = "";
-			$.each($(".check-item:checked"),function(){
-				ids += $(this).parents("tr").find("td:eq(0)").attr('id')+",";
+			$.each($(".check-item:checked"), function() {
+				ids += $(this).parents("tr").find("td:eq(0)").attr('id') + ",";
 			});
 			console.info(ids);
 			$.ajax({
-				url : baseUrl+'/integrationModel/' + ids,
+				url : baseUrl + '/integrationModel/' + ids,
 				method : 'POST',
 				success : function(result) {
 					if (result.code == 200) {
@@ -710,7 +731,7 @@
 				}
 			})
 		})
-		
+
 		$('#search-btn').click(function() {
 			to_page(1);
 		})
@@ -718,13 +739,11 @@
 			$('#search-form')[0].reset();
 			to_page(1);
 		})
-		
-		
+
 		$(document).on("click", ".view-btn", function() {
 			$('#view-modal').modal();
-			
+
 		})
-		
 	</script>
 
 	<script>
@@ -815,7 +834,7 @@
 			});
 		});
 	</script>
-	
+
 </body>
 
 </html>

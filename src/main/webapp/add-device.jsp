@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>致微</title>
+<title>致微后台管理系统</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -231,9 +231,7 @@
 
 
 			<div id="logo-mobile" class="visible-xs">
-				<h1>
-					致微<span>v1.3</span>
-				</h1>
+				<h1>致微后台管理系统</h1>
 			</div>
 
 		</div>
@@ -292,7 +290,7 @@
 	<!-- SIDE MENU -->
 	<div id="skin-select">
 		<div id="logo">
-			<h1>致微</h1>
+			<h1>致微后台管理系统</h1>
 		</div>
 
 		<a id="toggle"> <span class="entypo-menu"></span>
@@ -328,15 +326,18 @@
 									title="Operation-personnel-management"> <span>运维人员管理</span>
 								</a></li>
 							</ul></li>
+
 						<li><a class="tooltip-tip ajax-load"
-							href="task-management.jsp" title="Task-management"> <i
-								class="fontawesome-list-ul"></i> <span>任务管理</span>
+							href="model-management.jsp" title="Model-management"> <i
+								class="fontawesome-tasks"></i> <span>模型管理</span>
 
 						</a></li>
 
+						<li><a class="tooltip-tip ajax-load"
+							href="building-management.jsp" title="Building-management"> <i
+								class="icon icon-location"></i> <span>楼宇管理</span>
 
-
-
+						</a></li>
 
 						<li><a class="tooltip-tip ajax-load" href="#"
 							title="Dashboard"> <i class="entypo-newspaper"></i> <span>设备管理</span>
@@ -351,32 +352,35 @@
 										<span>设备维护</span>
 								</a></li>
 							</ul></li>
-						<li><a class="tooltip-tip ajax-load"
-							href="model-management.jsp" title="Model-management"> <i
-								class="fontawesome-tasks"></i> <span>模型管理</span>
 
-						</a></li>
+						<li><a class="tooltip-tip ajax-load" href="#"
+							title="Dashboard"> <i class="entypo-newspaper"></i> <span>运维管理</span>
 
-						<li><a class="tooltip-tip ajax-load"
-							href="building-management.jsp" title="Building-management"> <i
-								class="icon icon-location"></i> <span>楼宇管理</span>
+						</a>
+							<ul>
 
-						</a></li>
+								<li><a class="tooltip-tip ajax-load"
+									href="task-management.jsp" title="Task-management"> <i
+										class="fontawesome-list-ul"></i> <span>任务管理</span>
+
+								</a></li>
 
 
+								<li><a class="tooltip-tip "
+									href="historical-question-chart.jsp"
+									title="Historical question chart"> <i
+										class="icon icon-graph-bar"></i> <span>历史问题图表</span>
+								</a></li>
 
-						<li><a class="tooltip-tip "
-							href="historical-question-chart.jsp"
-							title="Historical question chart"> <i
-								class="icon icon-graph-bar"></i> <span>历史问题图表</span>
-						</a></li>
+								<li><a class="tooltip-tip ajax-load"
+									href="alarm-prompt.jsp" title="Alarm-prompt"><i
+										class="fontawesome-warning-sign"></i><span>报警提示</span> </a></li>
+								<li><a class="tooltip-tip ajax-load"
+									href="operation-planning.jsp" title="Operation-planning"><i
+										class="fontawesome-calendar"></i><span>运维规划</span></a></li>
+							</ul></li>
 
-						<li><a class="tooltip-tip ajax-load" href="alarm-prompt.jsp"
-							title="Alarm-prompt"><i class="fontawesome-warning-sign"></i><span>报警提示</span>
-						</a></li>
-						<li><a class="tooltip-tip ajax-load"
-							href="operation-planning.jsp" title="Operation-planning"><i
-								class="fontawesome-calendar"></i><span>运维规划</span></a></li>
+
 						<li><a class="tooltip-tip ajax-load"
 							href="personal-setting.jsp" title="Personal-setting"><i
 								class="fontawesome-cog"></i><span>个人设置</span></a></li>
@@ -527,9 +531,8 @@
 	<script type="text/javascript" src="assets/js/myplugin.js"></script>
 
 	<script type="text/javascript">
-				
 		var baseUrl = 'http://localhost:8080/FantasyStar2';
-	
+
 		$('#save-btn').click(function() {
 			$.ajax({
 				url : baseUrl + '/saveDevice',
@@ -546,85 +549,106 @@
 	</script>
 
 	<script type="text/javascript">
-	var viewToken = 'f3d0cbcdbdaf4a2fb52a6427e3a13b48';
-//	var viewToken = 'a6419c5e364f48a3b268a3b5d61e1658';
-	var view = document.getElementById('domId')
+		var viewToken = 'f3d0cbcdbdaf4a2fb52a6427e3a13b48';
+		//	var viewToken = 'a6419c5e364f48a3b268a3b5d61e1658';
+		var view = document.getElementById('domId')
 
-	var bimfaceLoaderConfig = new BimfaceSDKLoaderConfig();
-	bimfaceLoaderConfig.viewToken = viewToken;
-	BimfaceSDKLoader.load(bimfaceLoaderConfig, onSDKLoadSucceeded);
-	
-	function onSDKLoadSucceeded(viewMetaData) {
-		
-		var viewer3DConfig = new Glodon.Bimface.Application.WebApplication3DConfig();
-		viewer3DConfig.domElement = view;
+		var bimfaceLoaderConfig = new BimfaceSDKLoaderConfig();
+		bimfaceLoaderConfig.viewToken = viewToken;
+		BimfaceSDKLoader.load(bimfaceLoaderConfig, onSDKLoadSucceeded);
 
-		app = new Glodon.Bimface.Application.WebApplication3D(viewer3DConfig);
-		app.addView(viewToken);
-		viewer = app.getViewer();
-		viewer.hideComponents(["1065162"]);
-		// 首先创建DrawableContainer
-		var drawaleContainerConfig = new Glodon.Bimface.Plugins.Drawable.DrawableContainerConfig();
-		drawaleContainerConfig.viewer = viewer;
-		var drawableContainer = new Glodon.Bimface.Plugins.Drawable.DrawableContainer(drawaleContainerConfig);
+		function onSDKLoadSucceeded(viewMetaData) {
 
-		//首先创建一个AnnotationManagerConfig
-		var  annotationconfig=new Glodon.Bimface.Plugins.Annotation.AnnotationManagerConfig();
-		annotationconfig.viewer=viewer;
-		var annotationmanager= new Glodon.Bimface.Plugins.Annotation.AnnotationManager(annotationconfig);
-		//此处是对象，不是个方法
-		var annotationtype= Glodon.Bimface.Plugins.Annotation.AnnotationTypeOption.Circle;
-		console.log(annotationtype);
-		
+			var viewer3DConfig = new Glodon.Bimface.Application.WebApplication3DConfig();
+			viewer3DConfig.domElement = view;
 
-		var eventManager = Glodon.Bimface.Viewer.Viewer3DEvent;
-		viewer.addEventListener(eventManager.ViewAdded,function() {
-		
-		viewer.render();
-		});  
+			app = new Glodon.Bimface.Application.WebApplication3D(
+					viewer3DConfig);
+			app.addView(viewToken);
+			viewer = app.getViewer();
+			viewer.hideComponents([ "1065162" ]);
+			// 首先创建DrawableContainer
+			var drawaleContainerConfig = new Glodon.Bimface.Plugins.Drawable.DrawableContainerConfig();
+			drawaleContainerConfig.viewer = viewer;
+			var drawableContainer = new Glodon.Bimface.Plugins.Drawable.DrawableContainer(
+					drawaleContainerConfig);
 
-		viewer.addEventListener(eventManager.ComponentsSelectionChanged,function(componentData) {
-			//console.log(componentData);
+			//首先创建一个AnnotationManagerConfig
+			var annotationconfig = new Glodon.Bimface.Plugins.Annotation.AnnotationManagerConfig();
+			annotationconfig.viewer = viewer;
+			var annotationmanager = new Glodon.Bimface.Plugins.Annotation.AnnotationManager(
+					annotationconfig);
+			//此处是对象，不是个方法
+			var annotationtype = Glodon.Bimface.Plugins.Annotation.AnnotationTypeOption.Circle;
+			console.log(annotationtype);
 
-		if(componentData && componentData.objectId){
+			var eventManager = Glodon.Bimface.Viewer.Viewer3DEvent;
+			viewer.addEventListener(eventManager.ViewAdded, function() {
 
-			var imageConfig = new Glodon.Bimface.Plugins.Drawable.ImageConfig();
-			// 设置自己的imageUrl
-			imageConfig.src = "img/flower.png";
-			console.log(componentData);
-			console.log(componentData.worldPosition);
-			// 通过selection change可以得到构件ID和坐标
-			imageConfig.worldPosition = componentData.worldPosition;
-			var image = new Glodon.Bimface.Plugins.Drawable.Image(imageConfig);
-			image.onClick(function() {
-				//var wid=image.getWidth()
-				//alert(wid);
-				$.ajax({
-					url : baseUrl + '/getAddInfos',
-					method : 'GET',
-					success : function(result) {
-						var deviceNames = result.info.deviceNames;
-						$('#add-device-name').empty();
-						$.each(deviceNames, function(index, item) {
-							$('#add-device-name').append(
-									$('<option></option>').text(item).val(
-											item));
-						})
-					}
-				});
-				$('#add-modal').modal({
-					backdrop : 'static'
-				})
+				viewer.render();
 			});
-			
-			// 添加image
-			drawableContainer.addItem(image);
 
-			
-	}
-		});
+			viewer
+					.addEventListener(
+							eventManager.ComponentsSelectionChanged,
+							function(componentData) {
+								//console.log(componentData);
+
+								if (componentData && componentData.objectId) {
+
+									var imageConfig = new Glodon.Bimface.Plugins.Drawable.ImageConfig();
+									// 设置自己的imageUrl
+									imageConfig.src = "img/flower.png";
+									console.log(componentData);
+									console.log(componentData.worldPosition);
+									// 通过selection change可以得到构件ID和坐标
+									imageConfig.worldPosition = componentData.worldPosition;
+									var image = new Glodon.Bimface.Plugins.Drawable.Image(
+											imageConfig);
+									image
+											.onClick(function() {
+												//var wid=image.getWidth()
+												//alert(wid);
+												$
+														.ajax({
+															url : baseUrl
+																	+ '/getAddInfos',
+															method : 'GET',
+															success : function(
+																	result) {
+																var deviceNames = result.info.deviceNames;
+																$(
+																		'#add-device-name')
+																		.empty();
+																$
+																		.each(
+																				deviceNames,
+																				function(
+																						index,
+																						item) {
+																					$(
+																							'#add-device-name')
+																							.append(
+																									$(
+																											'<option></option>')
+																											.text(
+																													item)
+																											.val(
+																													item));
+																				})
+															}
+														});
+												$('#add-modal').modal({
+													backdrop : 'static'
+												})
+											});
+
+									// 添加image
+									drawableContainer.addItem(image);
+
+								}
+							});
 		}
-	
 	</script>
 </body>
 
